@@ -19,7 +19,7 @@ Variables let you change in one place, where it's declared. Will automatically c
 
 4. Cannot declare a variable with the word `new`. It is a reserved keyword, same thing goes for `function`. Can name something as `_function` or `$function`. Only way it is allowed.
 
-5. `name` is reserved, but still technically allowed. But in some cases can create problems. Never call variables just `name.
+5. `name` is reserved, but still technically allowed. But in some cases can create problems. Never call variables just `name`.
 
 6. Another convention is to not start a variable name with an uppercase letter.
 
