@@ -100,3 +100,21 @@ const isFullAge = ageSarah >= 18;
 
 console.log(now - 1991 > now - 2018);
 */
+
+const now = 2037;
+const ageJonas = now - 1991;
+const ageSarah = now - 2018;
+
+console.log(now - 1991 > now - 2018);
+
+// left to right operation
+// console.log(25 - 10 - 5);
+
+// assignment is a good example of right to left operation
+let x, y;
+x = y = 25 - 10 - 5; // x = y = 10; then only two operators left.
+console.log(x, y);
+
+const averageAge = (ageJonas + ageSarah) / 2;
+// if no parentheses, will divide first and then add.
+console.log(ageJonas, ageSarah, averageAge);
