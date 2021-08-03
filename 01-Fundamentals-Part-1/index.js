@@ -27,6 +27,7 @@ let job2 = "teacher";
 console.log(myFirstJob);
 */
 
+/*
 let javascriptIsFun = true;
 console.log(javascriptIsFun);
 
@@ -46,3 +47,21 @@ year = 1991;
 console.log(typeof year);
 
 console.log(typeof null);
+*/
+
+let age = 30;
+age = 31;
+
+const birthYear = 1991;
+// birthYear = 1998;
+
+// this is not legal
+// const job;
+
+// the old way of defining variables
+var job = "programmer";
+job = "teacher";
+
+// never write like this without declaring it.
+lastName = "Schmedtmann";
+console.log(lastName);
