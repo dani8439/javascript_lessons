@@ -28,3 +28,6 @@
 // const description =
 //   "Portugal is in Europe, and its 11 million people speak portuguese.";
 // console.log(description);
+
+const description = `Portugal is in Europe, and it's 11 million people speak portuguese.`;
+console.log(description);
