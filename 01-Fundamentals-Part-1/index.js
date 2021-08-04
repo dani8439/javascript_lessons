@@ -134,6 +134,8 @@ TEST DATA 2: Marks weights 95 kg and is 1.88 m tall. John weights 85 kg and is 1
 GOOD LUCK 😀
 */
 
+/*
+
 const markWeight = 78;
 const markHeight = 1.69;
 const johnWeight = 92;
@@ -153,3 +155,27 @@ console.log(markHigherBMI);
 // const johnWeight = 85;
 // const johnHeight = 176;
 // console.log(markWeight, markHeight, johnWeight, johnHeight);
+*/
+
+const firstName = "Jonas";
+const job = "teacher";
+const birthYear = 1991;
+const year = 2037;
+
+// this can be kind of a pain.
+const jonas =
+  "I'm " + firstName + ", a " + (year - birthYear) + " years old " + job + "!";
+console.log(jonas);
+
+const jonasNew = `I'm ${firstName}, a ${year - birthYear} year old ${job}`;
+console.log(jonasNew);
+console.log(`Just a regular string...`);
+
+// old way to write multiline strings;
+console.log("String with \n\
+multiple \n\
+lines");
+
+console.log(`String
+multiple
+lines`);
