@@ -306,6 +306,8 @@ if (height) {
 }
 */
 
+/*
+
 const age = "18";
 // don't need curly braces if writing one block of code
 if (age === 18) console.log("You just became an adult :D (strict)");
@@ -332,3 +334,4 @@ if (favorite === 23) {
 
 // there is an operator for different.
 if (favorite !== 23) console.log("Why not 23?");
+*/

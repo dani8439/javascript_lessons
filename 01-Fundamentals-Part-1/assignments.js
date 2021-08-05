@@ -45,3 +45,17 @@ let population = 382200000;
 // console.log("19" - "13" + 17); // 23
 // console.log("123" < 57); // false
 // console.log(5 + 6 + "4" + 9 - 4 - 2); // 18 -- No, it's 1143. 5+6 = 11 + '4' = 114. 9-4-2 = 3 114+3 = 1143
+
+// const numNeighbors = prompt(
+//   "How many neighbour countries does your country have?"
+// );
+
+const numNeighbors = Number(
+  prompt("How many neighbour countries does your country have?")
+);
+
+if (numNeighbors === 1) {
+  console.log("Only 1 border!");
+} else if (numNeighbors > 1) {
+  console.log("More than 1 border");
+}
