@@ -39,3 +39,9 @@ let population = 382200000;
 //     `The US's population is ${33 - population} million below average.`
 //   );
 // }
+
+console.log("9" - "5"); // 4
+console.log("19" - "13" + "17"); // 617
+console.log("19" - "13" + 17); // 23
+console.log("123" < 57); // false
+console.log(5 + 6 + "4" + 9 - 4 - 2); // 18 -- No, it's 1143. 5+6 = 11 + '4' = 114. 9-4-2 = 3 114+3 = 1143

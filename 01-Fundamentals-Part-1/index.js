@@ -247,6 +247,8 @@ if (markBMI > johnBMI) {
 }
 */
 
+/*
+
 // type conversion
 const inputYear = "1991";
 console.log(Number(inputYear), inputYear); // doesn't mutate the original.
@@ -276,3 +278,4 @@ console.log(x);
 
 let y = "10" - "4" - "3" - 2 + "5";
 console.log(y);
+*/
