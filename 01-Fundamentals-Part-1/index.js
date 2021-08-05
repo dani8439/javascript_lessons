@@ -423,6 +423,8 @@ GOOD LUCK 😀
 //   console.log(`No one wins the trophy 😭!`);
 // }
 
+/*
+
 const day = "wednesday";
 
 switch (day) {
@@ -463,3 +465,4 @@ if (day === "monday") {
 } else {
   console.log("Not a valid day!");
 }
+*/
