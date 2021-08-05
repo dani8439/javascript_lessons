@@ -279,3 +279,26 @@ console.log(x);
 let y = "10" - "4" - "3" - 2 + "5";
 console.log(y);
 */
+
+// 5 falsy values: 0, '', undefined, null, NaN. False is already false.
+console.log(Boolean(0));
+console.log(Boolean(undefined));
+console.log(Boolean("Jonas"));
+console.log(Boolean({}));
+console.log(Boolean(""));
+
+const money = 0;
+// tries to coerce any value into a boolean. 0 is false, so first block doesn't execute.
+if (money) {
+  console.log("Don't spend it all ;)");
+} else {
+  console.log("You should get a job!");
+}
+
+let height = 0;
+// 0 triggers undefined, but it's kind of a bug. As we've defined height.
+if (height) {
+  console.log("YAY! Height is defined");
+} else {
+  console.log("Height is UNDEFINED");
+}
