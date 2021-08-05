@@ -1,6 +1,8 @@
 const country = "United States of America";
 const continent = "North America";
-let population = 382200000;
+let population = 382;
+const language = "english";
+const isIsland = true;
 
 // console.log(country);
 // console.log(continent);
@@ -59,3 +61,9 @@ let population = 382200000;
 // } else if (numNeighbors > 1) {
 //   console.log("More than 1 border");
 // }
+
+if (language === "english" && population < 50 && !isIsland) {
+  console.log(`You should live in ${country} :)`);
+} else {
+  console.log(`${country} does not meet your criteria :(`);
+}
