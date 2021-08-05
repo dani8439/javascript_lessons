@@ -50,12 +50,12 @@ let population = 382200000;
 //   "How many neighbour countries does your country have?"
 // );
 
-const numNeighbors = Number(
-  prompt("How many neighbour countries does your country have?")
-);
+// const numNeighbors = Number(
+//   prompt("How many neighbour countries does your country have?")
+// );
 
-if (numNeighbors === 1) {
-  console.log("Only 1 border!");
-} else if (numNeighbors > 1) {
-  console.log("More than 1 border");
-}
+// if (numNeighbors === 1) {
+//   console.log("Only 1 border!");
+// } else if (numNeighbors > 1) {
+//   console.log("More than 1 border");
+// }
