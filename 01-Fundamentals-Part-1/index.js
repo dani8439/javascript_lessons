@@ -280,6 +280,8 @@ let y = "10" - "4" - "3" - 2 + "5";
 console.log(y);
 */
 
+/*
+
 // 5 falsy values: 0, '', undefined, null, NaN. False is already false.
 console.log(Boolean(0));
 console.log(Boolean(undefined));
@@ -302,3 +304,31 @@ if (height) {
 } else {
   console.log("Height is UNDEFINED");
 }
+*/
+
+const age = "18";
+// don't need curly braces if writing one block of code
+if (age === 18) console.log("You just became an adult :D (strict)");
+
+if (age == 18) console.log("You just became an adult :D (loose)");
+
+const favorite = Number(prompt("What's your favorite number?"));
+console.log(favorite); // prints out as a string
+console.log(typeof favorite);
+
+// because using the double equals, the string '23' is coerced into a number.
+// string equality won't work. So have to convert string to a number. So it becomes 23 === 23 which is true.
+if (favorite === 23) {
+  console.log("Cool! 23 is an amazing number!");
+} else if (favorite === 7) {
+  console.log("7 is also a cool number");
+} else if (favorite === 9) {
+  console.log("9 is also a cool number");
+} else {
+  console.log("Number is not 23 or 7 or 9");
+}
+
+// can chain if together with else if, before going into the else block.
+
+// there is an operator for different.
+if (favorite !== 23) console.log("Why not 23?");
