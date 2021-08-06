@@ -91,6 +91,6 @@ const isIsland = false;
 //     console.log("Great language too :D");
 // }
 
-population > 33
-  ? console.log(`${country}'s population is above averate`)
-  : console.log(`${country}'s population is below average`);
+// population > 33
+//   ? console.log(`${country}'s population is above averate`)
+//   : console.log(`${country}'s population is below average`);
