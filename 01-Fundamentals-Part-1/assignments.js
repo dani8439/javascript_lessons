@@ -1,8 +1,8 @@
-// const country = "United States of America";
-// const continent = "North America";
-// let population = 382;
-// const language = "english";
-// const isIsland = true;
+const country = "United States of America";
+const continent = "North America";
+let population = 382;
+const language = "english";
+const isIsland = false;
 
 // console.log(country);
 // console.log(continent);
@@ -90,3 +90,7 @@
 //   default:
 //     console.log("Great language too :D");
 // }
+
+population > 33
+  ? console.log(`${country}'s population is above averate`)
+  : console.log(`${country}'s population is below average`);
