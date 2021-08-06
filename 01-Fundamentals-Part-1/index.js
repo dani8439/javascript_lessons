@@ -466,3 +466,17 @@ if (day === "monday") {
   console.log("Not a valid day!");
 }
 */
+
+// expressions
+3 + 4;
+1991;
+true && false && !false;
+
+// a statement. Performs some actions, doesn't produce a value.
+if (23 > 10) {
+  const str = "23 is bigger";
+  // string is an expression, but the whole line of code of const str = '23 is bigger1 is a statement. anything ending with a semicolon is a statement.
+}
+
+const me = "Jonas";
+console.log(`I'm ${2037 - 1991} years old ${me}.`);
