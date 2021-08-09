@@ -32,3 +32,14 @@
 
 // const englandPop = calcPopulation(55);
 // console.log(englandPop);
+
+const percentageOfWorld3 = (population) => (population / 7900) * 100;
+
+const nigeriaPop = percentageOfWorld3(202);
+console.log(nigeriaPop);
+
+const japanPop = percentageOfWorld3(126);
+console.log(japanPop);
+
+const englandPop = percentageOfWorld3(55);
+console.log(englandPop);

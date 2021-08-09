@@ -64,6 +64,7 @@ const age2 = calcAge2(1991);
 console.log(age2);
 */
 
+/*
 // Function expression
 const calcAge2 = function (birthYear) {
   return 2037 - birthYear;
@@ -84,3 +85,4 @@ const yearsUntilRetirement = (birthYear, firstName) => {
 
 console.log(yearsUntilRetirement(1991, "Jonas"));
 console.log(yearsUntilRetirement(1980, "Bob"));
+*/
