@@ -8,3 +8,27 @@
 // console.log(nigeria);
 // console.log(japan);
 // console.log(england);
+
+function percentageOfWorld1(population) {
+  return (population / 7900) * 100;
+}
+
+const nigeria = percentageOfWorld1(202);
+console.log(nigeria);
+const japan = percentageOfWorld1(126);
+console.log(japan);
+const england = percentageOfWorld1(55);
+console.log(england);
+
+const calcPopulation = function (population) {
+  return (population / 7900) * 100;
+};
+
+const nigeriaPop = calcPopulation(202);
+console.log(nigeriaPop);
+
+const japanPop = calcPopulation(126);
+console.log(japanPop);
+
+const englandPop = calcPopulation(55);
+console.log(englandPop);

@@ -44,6 +44,7 @@ console.log(appleOrangeJuice);
 const num = Number("23");
 */
 
+/*
 // function declaration
 
 const age1 = calcAge1(1991);
@@ -61,3 +62,4 @@ const calcAge2 = function (birthYear) {
 
 const age2 = calcAge2(1991);
 console.log(age2);
+*/
