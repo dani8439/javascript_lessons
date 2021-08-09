@@ -17,3 +17,5 @@ In JavaScript, functions are just values.
 # Difference between Function Declaration and Function Expressions
 
 Can call a function declaration before it's defined. Will get the same result. If we do it with a function expression, get an error of cannot access before initialization. Happens because of hoisting. Can call it before it's defined, if necessary.
+
+Which should I use? Answer is, oftentimes, it's a matter of personal preference.
