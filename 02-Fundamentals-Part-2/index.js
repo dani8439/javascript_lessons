@@ -105,6 +105,8 @@ function fruitProcessor(apples, oranges) {
 console.log(fruitProcessor(2, 3));
 */
 
+/*
+
 // parameter is like a local variable to each function. birthYear in both functions is not the same.
 const calcAge = function (birthYear) {
   return 2037 - birthYear;
@@ -129,3 +131,5 @@ const yearsUntilRetirement = function (birthYear, firstName) {
 
 console.log(yearsUntilRetirement(1991, "Jonas"));
 console.log(yearsUntilRetirement(1950, "Mike"));
+
+*/
