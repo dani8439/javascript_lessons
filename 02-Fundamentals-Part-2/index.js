@@ -274,6 +274,7 @@ const jonas = {
 console.log(jonas);
 */
 
+/*
 const jonas = {
   firstName: "Jonas",
   lastName: "Schmedtmann",
@@ -316,3 +317,4 @@ console.log(jonas);
 console.log(
   `${jonas.firstName} has ${jonas.friends.length} friends, and his best friend is called ${jonas.friends[0]}`
 );
+*/
