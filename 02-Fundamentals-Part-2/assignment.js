@@ -109,19 +109,19 @@ checkWinner(avgDolphins, avgKoalas);
 
 */
 
-const populations = [126, 202, 55, 328];
+// const populations = [126, 202, 55, 328];
 
-console.log(populations.length === 4);
+// console.log(populations.length === 4);
 
-function percentageOfWorld1(population) {
-  return (population / 7900) * 100;
-}
+// function percentageOfWorld1(population) {
+//   return (population / 7900) * 100;
+// }
 
-const percentages = [
-  percentageOfWorld1(populations[0]),
-  percentageOfWorld1(populations[1]),
-  percentageOfWorld1(populations[2]),
-  percentageOfWorld1(populations[populations.length - 1])
-];
+// const percentages = [
+//   percentageOfWorld1(populations[0]),
+//   percentageOfWorld1(populations[1]),
+//   percentageOfWorld1(populations[2]),
+//   percentageOfWorld1(populations[populations.length - 1])
+// ];
 
-console.log(percentages);
+// console.log(percentages);
