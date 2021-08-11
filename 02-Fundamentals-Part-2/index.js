@@ -133,3 +133,55 @@ console.log(yearsUntilRetirement(1991, "Jonas"));
 console.log(yearsUntilRetirement(1950, "Mike"));
 
 */
+
+// instead of doing this
+
+const friend1 = "Michael";
+const friend2 = "Steven";
+const friend3 = "Peter";
+
+// lets do this:
+const friends = ["Michael", "Steven", "Peter"];
+console.log(friends);
+
+// use the array function (Array())
+const y = new Array(1991, 1984, 2008, 2020);
+
+console.log(friends[0]);
+console.log(friends[2]);
+
+console.log(friends.length);
+console.log(friends[friends.length - 1]);
+// an expression, will calculate the length first, then find the last element
+
+// Can mutate the array
+friends[2] = "Jay";
+console.log(friends);
+// can't do this:
+// friends = ["Bob", "Alice"];
+
+const firstName = "Jonas";
+const jonas = [firstName, "Schmedtmann", 2037 - 1991, "teacher", friends];
+console.log(jonas);
+
+// Exercise
+const calcAge = function (birthYear) {
+  return 2037 - birthYear;
+};
+
+const years = [1990, 1967, 2002, 2010, 2018];
+// cannot do this. It won't know what to do with it. It expects a single value
+// console.log(calcAge(years));
+// result is NaN, result of attempting to subtract a whole array from a number.
+
+const age1 = calcAge(years[0]);
+const age2 = calcAge(years[1]);
+const age3 = calcAge(years[years.length - 1]);
+console.log(age1, age2, age3);
+
+const ages = [
+  calcAge(years[0]),
+  calcAge(years[1]),
+  calcAge(years[years.length - 1])
+];
+console.log(ages);
