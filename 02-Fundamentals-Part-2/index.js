@@ -134,6 +134,8 @@ console.log(yearsUntilRetirement(1950, "Mike"));
 
 */
 
+/*
+
 // instead of doing this
 
 const friend1 = "Michael";
@@ -185,3 +187,4 @@ const ages = [
   calcAge(years[years.length - 1])
 ];
 console.log(ages);
+*/
