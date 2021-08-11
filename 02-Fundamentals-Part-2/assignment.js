@@ -139,3 +139,13 @@ checkWinner(avgDolphins, avgKoalas);
 // console.log(neighbors.indexOf("Slovenia"));
 // neighbors[3] = "Republic of Slovenia";
 // console.log(neighbors);
+
+const myCountry = {
+  country: "Italy",
+  capital: "Rome",
+  language: "Italian",
+  population: 60,
+  neighbors: ["France", "Switzerland", "Austria", "Slovenia"]
+};
+
+console.log(myCountry);
