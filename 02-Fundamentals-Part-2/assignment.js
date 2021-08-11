@@ -126,16 +126,16 @@ checkWinner(avgDolphins, avgKoalas);
 
 // console.log(percentages);
 
-const neighbors = ["France", "Switzerland", "Austria", "Slovenia"];
-console.log(neighbors);
-neighbors.push("Utopia");
-console.log(neighbors);
-neighbors.pop();
-console.log(neighbors);
-if (!neighbors.includes("Germant")) {
-  console.log("Probably not a central European country :D");
-}
+// const neighbors = ["France", "Switzerland", "Austria", "Slovenia"];
+// console.log(neighbors);
+// neighbors.push("Utopia");
+// console.log(neighbors);
+// neighbors.pop();
+// console.log(neighbors);
+// if (!neighbors.includes("Germant")) {
+//   console.log("Probably not a central European country :D");
+// }
 
-console.log(neighbors.indexOf("Slovenia"));
-neighbors[3] = "Republic of Slovenia";
-console.log(neighbors);
+// console.log(neighbors.indexOf("Slovenia"));
+// neighbors[3] = "Republic of Slovenia";
+// console.log(neighbors);
