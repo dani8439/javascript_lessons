@@ -140,20 +140,20 @@ checkWinner(avgDolphins, avgKoalas);
 // neighbors[3] = "Republic of Slovenia";
 // console.log(neighbors);
 
-const myCountry = {
-  country: "Italy",
-  capital: "Rome",
-  language: "Italian",
-  population: 60,
-  neighbors: ["France", "Switzerland", "Austria", "Slovenia"]
-};
+// const myCountry = {
+//   country: "Italy",
+//   capital: "Rome",
+//   language: "Italian",
+//   population: 60,
+//   neighbors: ["France", "Switzerland", "Austria", "Slovenia"]
+// };
 
-console.log(myCountry);
-console.log(
-  `${myCountry.country} has ${myCountry.population} million ${myCountry.language} speaking people, ${myCountry.neighbors.length} neighboring countries and a capital called ${myCountry.capital}`
-);
+// console.log(myCountry);
+// console.log(
+//   `${myCountry.country} has ${myCountry.population} million ${myCountry.language} speaking people, ${myCountry.neighbors.length} neighboring countries and a capital called ${myCountry.capital}`
+// );
 
-myCountry.population += 2;
-console.log(myCountry.population);
-myCountry["population"] -= 2;
-console.log(myCountry.population);
+// myCountry.population += 2;
+// console.log(myCountry.population);
+// myCountry["population"] -= 2;
+// console.log(myCountry.population);
