@@ -436,6 +436,7 @@ if (mark.bmi > john.bmi) {
 //   console.log(`Lifting weights repetition ${rep} 🏋🏻‍♀️`);
 // }
 
+/*
 const jonasArray = [
   "Jonas",
   "Schmedtmann",
@@ -492,3 +493,4 @@ for (let i = 0; i < jonasArray.length; i++) {
   if (typeof jonasArray[i] === "number") break;
   console.log(jonasArray[i], typeof jonasArray[i]);
 }
+*/
