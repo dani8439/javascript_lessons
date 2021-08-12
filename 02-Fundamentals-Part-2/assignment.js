@@ -166,18 +166,18 @@ const populations = [126, 202, 55, 328];
 
 // console.log(populations.length === 4);
 
-function percentageOfWorld1(population) {
-  return (population / 7900) * 100;
-}
+// function percentageOfWorld1(population) {
+//   return (population / 7900) * 100;
+// }
 
-let percentages2 = [];
-for (i = 0; i < populations.length; i++) {
-  percentages2.push(percentageOfWorld1(populations[i]));
-  // console.log(percentageOfWorld1(populations[i]));
+// let percentages2 = [];
+// for (i = 0; i < populations.length; i++) {
+//   percentages2.push(percentageOfWorld1(populations[i]));
+//   // console.log(percentageOfWorld1(populations[i]));
 
-  // can also do:
-  // const perc = percentagesOfWorld1(populations[i]);
-  // percentages2.push(perc);
-}
+//   // can also do:
+//   // const perc = percentagesOfWorld1(populations[i]);
+//   // percentages2.push(perc);
+// }
 
-console.log(percentages2);
+// console.log(percentages2);
