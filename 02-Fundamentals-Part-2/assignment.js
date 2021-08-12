@@ -181,3 +181,15 @@ const populations = [126, 202, 55, 328];
 // }
 
 // console.log(percentages2);
+
+const listOfNeighbors = [
+  ["Canada", "Mexico"],
+  ["Spain"],
+  ["Norway", "Sweden", "Russia"]
+];
+
+for (let i = 0; i < listOfNeighbors.length; i++) {
+  for (let j = 0; j < listOfNeighbors.length; j++) {
+    console.log(`Neigbor: ${listOfNeighbors[i][j]}`);
+  }
+}
