@@ -435,3 +435,60 @@ if (mark.bmi > john.bmi) {
 // for (let rep = 1; rep <= 10; rep++) {
 //   console.log(`Lifting weights repetition ${rep} 🏋🏻‍♀️`);
 // }
+
+const jonasArray = [
+  "Jonas",
+  "Schmedtmann",
+  2037 - 1991,
+  "teacher",
+  ["Michael", "Peter", "Steven"],
+  true
+];
+
+const types = [];
+
+// console.log(jonasArray[0]);
+// console.log(jonasArray[1]);
+// console.log(jonasArray[2]);
+// console.log(jonasArray[3]);
+// console.log(jonasArray[4]);
+// (jonasArray[5]) does NOT exist;
+
+for (let i = 0; i < jonasArray.length; i++) {
+  // use counter variable to loop through the array
+  // reaching from jonasArray
+  console.log(jonasArray[i], typeof jonasArray[i]);
+
+  // one way of filling in an array.
+  // types[i] = typeof jonasArray[i];
+  types.push(typeof jonasArray[i]);
+}
+
+// want to create a new array that contains all the types of these elements.
+// start by creating new empty array outside of the loop.
+
+// this would work, so also works with index number dynamically.
+// types[0] = "string";
+
+console.log(types);
+
+const years = [1991, 2007, 1969, 2020];
+const ages = [];
+
+for (let i = 0; i < years.length; i++) {
+  ages.push(2037 - years[i]);
+}
+
+console.log(ages);
+
+console.log("--- ONLY STRINGS ---");
+for (let i = 0; i < jonasArray.length; i++) {
+  if (typeof jonasArray[i] !== "string") continue;
+  console.log(jonasArray[i], typeof jonasArray[i]);
+}
+
+console.log("--- BREAK WITH NUMBER ---");
+for (let i = 0; i < jonasArray.length; i++) {
+  if (typeof jonasArray[i] === "number") break;
+  console.log(jonasArray[i], typeof jonasArray[i]);
+}

@@ -158,6 +158,6 @@ checkWinner(avgDolphins, avgKoalas);
 // myCountry["population"] -= 2;
 // console.log(myCountry.population);
 
-for (vote = 1; vote <= 50; vote++) {
-  console.log(`Vote number ${vote} is currently voting ☑`);
-}
+// for (vote = 1; vote <= 50; vote++) {
+//   console.log(`Vote number ${vote} is currently voting ☑`);
+// }
