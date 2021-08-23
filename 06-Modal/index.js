@@ -28,3 +28,18 @@ for (let i = 0; i < btnsOpenModal.length; i++)
 // now want to hide the modal window. Not calling the function though. Because it would immediately fire. Want it only fired as soon as the click event happens on the close modal button
 btnCloseModal.addEventListener('click', closeModal);
 overlay.addEventListener('click', closeModal);
+
+document.addEventListener('keydown', function (e) {
+  console.log(e.key);
+
+  if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+    closeModal();
+  }
+
+  // if (e.key === 'Escape') {
+  //   if (!modal.classList.contains('hidden')) {
+  //     /// need to call the function in this case to execute the code in the function
+  //     closeModal();
+  //   }
+  // }
+});
