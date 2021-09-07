@@ -1,6 +1,7 @@
 'use strict';
 
 // defined in global scope. Here in top level code. Function creates it's own scope, equivalent to variable environment of it's execution context
+/*
 function calcAge(birthYear) {
   const age = 2037 - birthYear;
 
@@ -45,3 +46,13 @@ calcAge(1991);
 // cannot access it outside of the function. Scope is one way, out in, not inner to outer. Same thing goes for printAge(). No access to variables defined in any other scope, in the global scope
 // console.log(age);
 // printAge();
+*/
+
+const myName = 'Jonas';
+if (myName == 'Jonas') {
+  console.log(`Jonas is a ${job}`);
+  const age = 2037 - 1989;
+  console.log(age);
+  const job = 'teacher';
+  console.log(x);
+}
