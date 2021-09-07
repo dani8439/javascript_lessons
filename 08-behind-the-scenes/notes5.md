@@ -20,10 +20,12 @@ On the surface Hoisting looks like a variable being lifted to the top of the sco
 
 Hoisting does not work the same for all variable types.
 
-                            HOISTED?                      INITIAL VALUE                    SCOPE
-                               👇                              👇                            👇
+                           | HOISTED?            |          INITIAL VALUE             |      SCOPE          |
+                           |    👇                |              👇                    |         👇          |
 
-function declarations ✅ YES Actual Function Block
+---
+
+function declarations |✅ YES Actual Function Block
 
 `var` variables ✅ YES `undefined` Function
 
