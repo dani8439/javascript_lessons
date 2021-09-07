@@ -69,3 +69,7 @@ Accessing variables before declaration is bad practice, and best practice is to 
 Second reason TDZ exists, is to make `const` variables work as they are supposed to. Can't set them to `undefined` first and redefine later. `const` should never be reassigned.
 
 ### Why Hoisting?
+
+Creator of JS created hoisting so we can use functions before actually declaring them. Some people think it also makes code a lot more readable.
+
+`var` hoisting is just a byproduct. Probably seemed like a good idea to set things to `undefined` but in hindsight isn't that great. JS was never intended to become as big as it's become. Can't remove it now. Have to work around it.
