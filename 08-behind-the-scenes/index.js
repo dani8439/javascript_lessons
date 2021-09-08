@@ -120,6 +120,7 @@ console.log(z === window.z); // false
 // when declare with var, we can then find our declared variable on the window object. Doesn't happen with let and const. 
 */
 
+/*
 // window object in the global scope
 console.log(this);
 
@@ -171,3 +172,111 @@ const f = jonas.calcAge;
 
 // what implications does this have for the this keyword? Now this is undefined. Happens because f function is just a regular function call, not attached to any object. No owner of the f function. Therefore, just a regular function call, therefore this keyword is undefined. like in const calcAge(). Subtle difference in code.
 f();
+*/
+
+// don't use var.
+// also never ever use an arrow function as a method.
+// var firstName = 'Matilda';
+
+// const jonas = {
+//   // this isn't a code block, it's an object literal
+//   firstName: 'Jonas',
+//   year: 1991,
+//   calcAge: function () {
+//     console.log(this);
+//     console.log(2037 - this.year);
+//   },
+
+//   // hey undefined! Arrow function doesn't get a this. Parent scope is global scope.
+//   // change it to a normal function and it would work.
+//   greet: () => {
+//     console.log(this);
+//     console.log(`Hey ${this.firstName}`);
+//   },
+// };
+
+// jonas.greet();
+
+// all of this can become pretty dangerous in case we use var to declare variables, as var creates properties on the global object
+// window object
+// console.log(this);
+// console.log(this.firstName); // when we try to acess a property on an object that doesn't exist, don't get an error but simply get back undefined.
+
+// function inside of a method.
+
+// const jonas = {
+// this isn't a code block, it's an object literal
+//   firstName: 'Jonas',
+//   year: 1991,
+//   calcAge: function () {
+//     // console.log(this);
+//     console.log(2037 - this.year);
+
+// Solution 1 Self
+
+//     const self = this; // also can be called self or that.
+//     const isMillenial = function () {
+//       // this keyword is undefined
+//       console.log(self);
+//       console.log(self.year >= 1981 && self.year <= 1996);
+//       // console.log(this.year >= 1981 && this.year <= 1996);
+//     };
+//     // is a regular function call, even though it happens inside of a method. Inside of a regular function call, this keyword must be undefined. Therefore it's undefined above. Just as if the function was outside the method. if copied code, and pasted outside, would get exact same result. It's not really a bug, just how the this keyword works. Clear rule of a function call being set to undefined. Two solutions to the problem, first solution is to use an extra variable called self set to this outside of the function.
+//     isMillenial();
+//   },
+
+//   greet: () => {
+//     console.log(this);
+//     console.log(`Hey ${this.firstName}`);
+//   },
+// };
+
+// jonas.greet();
+// jonas.calcAge();
+
+// more modern solution than self, is to use an arrow function.
+// Solution 2, use an arrow function. Doesn't have it's own this keyword.
+// works because this keyword uses from parent scope. Arrow function inherits this from parent scope.
+const jonas = {
+  firstName: 'Jonas',
+  year: 1991,
+  calcAge: function () {
+    console.log(2037 - this.year);
+
+    // Solution 2 An Arrow Function
+    const isMillenial = () => {
+      console.log(this);
+      console.log(this.year >= 1981 && this.year <= 1996);
+    };
+
+    isMillenial();
+  },
+
+  greet: () => {
+    console.log(this);
+    console.log(`Hey ${this.firstName}`);
+  },
+};
+
+jonas.greet();
+jonas.calcAge();
+
+// Arguments Keyword.
+// Functions also get access to an arguments keyword. Just like the this keyword, arguments only available in regular functions
+
+// Arguments keyword -> useful when have more arguments than specified. Makes an array.
+const addExpr = function (a, b) {
+  console.log(arguments);
+  return a + b;
+};
+addExpr(2, 5);
+addExpr(2, 5, 8, 17);
+
+// arrow function doesn't get this arguments keyword.
+var addArrow = (a, b) => {
+  console.log(arguments);
+  return a + b;
+};
+
+// get an error. arguments keyword exists only in regular functions (function declarations or function expressions, not in arrow functions)
+addArrow(2, 5, 8);
