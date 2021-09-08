@@ -9,7 +9,9 @@ Very important concept to understand in JS.
 It's one of the three components of any Execution Context:
 
 ✅ Variable environment
+
 ✅ Scope chain
+
 👉 `this` keyword/variable
 
 In general terms, the `this` keyword, always takes the value of the owner in which it's used.
@@ -18,15 +20,15 @@ In general terms, the `this` keyword, always takes the value of the owner in whi
 
 It's very different from a normal value in this regard. If we set x = 5, x will always be equal to 5. `this` depends on the way a function is called.
 
-**Method** 👉 `this` = <Object that is calling the method>
+**Method** 👉 `this` = Object that is calling the method
 
 **Simple function call** 👉 `this = undefined`
 
 **Arrow functions** 👉 `this` = <`this` of surrounding function (lexical `this`)>
 
-**Event listener** 👉 `this` = <DOM element that the handler is attached to>
+**Event listener** 👉 `this` = DOM element that the handler is attached to
 
-**new, call, apply, bind** 👉 <Later in the course...>
+**new, call, apply, bind** 👉 Later in the course...
 
 👉 Method Example:
 
