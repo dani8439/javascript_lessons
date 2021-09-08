@@ -119,3 +119,55 @@ console.log(z === window.z); // false
 // window is the global object of JS in the browser
 // when declare with var, we can then find our declared variable on the window object. Doesn't happen with let and const. 
 */
+
+// window object in the global scope
+console.log(this);
+
+// this is undefined. Because in strict mode. In sloppy mode, would be the global object - the window object
+const calcAge = function (birthYear) {
+  console.log(2037 - birthYear);
+  console.log(this);
+};
+
+calcAge(1991);
+
+// this is window. Lexical this. Uses the this of it's parent function/parent scope
+const calcAgeArr = birthYear => {
+  console.log(2037 - birthYear);
+  console.log(this);
+};
+
+calcAgeArr(1980);
+
+// method call, this keyword inside of the method, will be the object calling the method. jonas is the owner of the method. Therefore inside of calcAge, this is jonass
+// this is the jonas object
+const jonas = {
+  year: 1991,
+  calcAge: function () {
+    console.log(this);
+    console.log(2037 - this.year);
+  },
+};
+
+jonas.calcAge();
+
+// this kewyord will point to the object calling the method. this keyword will not simply point at the object in which we wrote the method. this keyword will point to jonas, is because jonas was the object calling that method.
+
+const matilda = {
+  year: 2017,
+};
+
+// remember a function is just a value. Can do this:
+// copy calcAge method from jonas to matilda. Called "Method borrowing" coped/borrowed method from one to the other
+
+matilda.calcAge = jonas.calcAge;
+matilda.calcAge();
+// this now points to matilda
+
+// can take further by takiing function out of jonas object
+// possible because a function is just a value
+
+const f = jonas.calcAge;
+
+// what implications does this have for the this keyword? Now this is undefined. Happens because f function is just a regular function call, not attached to any object. No owner of the f function. Therefore, just a regular function call, therefore this keyword is undefined. like in const calcAge(). Subtle difference in code.
+f();
