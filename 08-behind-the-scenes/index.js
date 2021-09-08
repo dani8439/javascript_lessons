@@ -57,6 +57,7 @@ calcAge(1991);
 //   console.log(x);
 // }
 
+/*
 // Hoisting with Variables
 console.log(me);
 // console.log(job);
@@ -116,4 +117,5 @@ console.log(y === window.y); // false
 console.log(z === window.z); // false
 
 // window is the global object of JS in the browser
-// when declare with var, we can then find our declared variable on the window object. Doesn't happen with let and const.
+// when declare with var, we can then find our declared variable on the window object. Doesn't happen with let and const. 
+*/
