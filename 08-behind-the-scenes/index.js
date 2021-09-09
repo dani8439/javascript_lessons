@@ -283,6 +283,7 @@ var addArrow = (a, b) => {
 addArrow(2, 5, 8);
 */
 
+/*
 // Primitive Values example
 let age = 30;
 let oldAge = age;
@@ -301,3 +302,50 @@ const friend = me;
 friend.age = 27;
 console.log('Friend:', friend);
 console.log('Me', me);
+*/
+
+// Mutate a primitive Stored in the call stack
+let lastName = 'Williams';
+let oldLastName = lastName;
+lastName = 'Davis';
+console.log(lastName, oldLastName);
+
+// object - Reference types - Stored in Heap
+const jessica = {
+  firstName: 'Jessica',
+  lastName: 'Williams',
+  age: 27,
+};
+
+// just copying the reference which will point to the same object
+const marriedJessica = jessica;
+marriedJessica.lastName = 'Davis';
+console.log('Before marriage: ', jessica);
+console.log('After marriage: ', marriedJessica);
+// Davis now in both.
+// Happens because when we attempted to copy the original jessica object, doesn't create a new jessica object in the heap. Simply just another variable in the stack, which holds the reference to the original object. Both variables point to same memory address in the heap. Same thing. So makes sense if change property on one, will change on both. We can change properties in marriedJessica object which was declared in a const. Const is supposed to be for constant. However what needs to be constant, is the value in the stack. In the stack, only holds the reference, which we're not actually changing. Only thing we are changing is the underlying object stored in the heap, and that's okay to change, nothing to do with const or let.
+
+// because this new object will be stored at a different position in memory, therefore that reference to memory will have to change in the variable. But that won't work ??? Can't change value to a new memory address with const. won't work, because it's a const. if it was a let above, we could.
+// marriedJessica = {};
+
+// Copying Objects
+const jessica2 = {
+  firstName: 'Jessica',
+  lastName: 'Williams',
+  age: 27,
+  family: ['Alice', 'Bob'],
+};
+
+// Object.assign. Will create a new object.
+// Now we can preserve original last name. Now the copy is a real copy. All the properties were essentially copied from one object to another. A new object was created in the heap, jessicaCopy is now pointing to has a reference to that new object. But there is still a problem. Using Object.assign only works on the first level. If we have an object inside an object, inner object will still be the same, point to the same place in memory. Why we say Object.assign creates a shallow copy, and not a deep clone (deep clone would copy everything)
+const jessicaCopy = Object.assign({}, jessica2);
+jessicaCopy.lastName = 'Davis';
+
+jessicaCopy.family.push('Mary');
+jessicaCopy.family.push('John');
+
+console.log('Before marriage: ', jessica2);
+console.log('After marriage: ', jessicaCopy);
+// now both have a family with four members. Before and after marriage. Family object is deeply nested, and did not reassign or copy behind the scenes. Family object is changed in both.
+
+// a deep clone is what's needed, but not easy to achieve. Usually use an external library like lo-dash
