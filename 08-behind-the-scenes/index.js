@@ -234,6 +234,7 @@ f();
 // jonas.greet();
 // jonas.calcAge();
 
+/*
 // more modern solution than self, is to use an arrow function.
 // Solution 2, use an arrow function. Doesn't have it's own this keyword.
 // works because this keyword uses from parent scope. Arrow function inherits this from parent scope.
@@ -280,3 +281,23 @@ var addArrow = (a, b) => {
 
 // get an error. arguments keyword exists only in regular functions (function declarations or function expressions, not in arrow functions)
 addArrow(2, 5, 8);
+*/
+
+// Primitive Values example
+let age = 30;
+let oldAge = age;
+age = 31;
+
+console.log(age);
+console.log(oldAge);
+
+// Reference Values example
+const me = {
+  name: 'Jonas',
+  age: 30,
+};
+
+const friend = me;
+friend.age = 27;
+console.log('Friend:', friend);
+console.log('Me', me);
