@@ -1,4 +1,4 @@
-# The JavaScript Enging and Runtime
+# The JavaScript Engine and Runtime
 
 ## What is a JavaScript Engine?
 
