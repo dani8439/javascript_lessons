@@ -29,3 +29,19 @@ Default values
 `console.log(p, q, r);`
 returns undefined for position 2.
 but can set default values, set them all to 1. So if no element, default value of 1.
+
+# Destructuring Objects
+
+Object destructuring, to do that we use the curly braces to destructure, because this is also how we create objects. All we have to do is provide variable names that exactly match property names that we want to extract from the object.
+
+The order of elements in an object doesn't matter.
+
+Very useful, especially when dealing with getting information from an API call, as it usually comes in an object.
+
+Destructuring is a lifesaver, lets us write a lot less code.
+
+What if we wanted variable names to be different than the property names? Still need to reference property names like before, but can then use a colon, and specify a new name. Ex:
+
+` const {name: restaurantName, openingHours: hours, categories: tags} = restaurant`
+
+Can assign default values when value might not be there, which is very helpful when data isn't hardcoded. Useful because might not know how the data will look when you get it in the real world.
