@@ -1,45 +1,51 @@
 'use strict';
 
 // Data needed for first part of the section
-// const restaurant = {
-//   name: 'Classico Italiano',
-//   location: 'Via Angelo Tavanti 23, Firenze, Italy',
-//   categories: ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'],
-//   starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
-//   mainMenu: ['Pizza', 'Pasta', 'Risotto'],
-//   openingHours: {
-//     thu: {
-//       open: 12,
-//       close: 22,
-//     },
-//     fri: {
-//       open: 11,
-//       close: 23,
-//     },
-//     sat: {
-//       open: 0, // Open 24 hours
-//       close: 24,
-//     },
-//   },
+const restaurant = {
+  name: 'Classico Italiano',
+  location: 'Via Angelo Tavanti 23, Firenze, Italy',
+  categories: ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'],
+  starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
+  mainMenu: ['Pizza', 'Pasta', 'Risotto'],
+  openingHours: {
+    thu: {
+      open: 12,
+      close: 22,
+    },
+    fri: {
+      open: 11,
+      close: 23,
+    },
+    sat: {
+      open: 0, // Open 24 hours
+      close: 24,
+    },
+  },
 
-//   order: function (starterIndex, mainIndex) {
-//     return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
-//   },
+  order: function (starterIndex, mainIndex) {
+    return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
+  },
 
-//   // immediate destructuring. Can also set defaults if it cannot be destructured.
-//   orderDelivery: function ({
-//     starterIndex = 1,
-//     mainIndex = 0,
-//     time = '20:00',
-//     address,
-//   }) {
-//     console.log(
-//       `Order received! ${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]} will be delivered to ${address} at ${time}.`
-//     );
-//   },
-// };
+  // immediate destructuring. Can also set defaults if it cannot be destructured.
+  orderDelivery: function ({
+    starterIndex = 1,
+    mainIndex = 0,
+    time = '20:00',
+    address,
+  }) {
+    console.log(
+      `Order received! ${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]} will be delivered to ${address} at ${time}.`
+    );
+  },
 
-// // common in JS to pass in object of options to a function. Can also destructuring right in function arguments right away.
+  orderPasta: function (ing1, ing2, ing3) {
+    console.log(
+      `Here is your delicious pasta with ${ing1}, ${ing2} and ${ing3}`
+    );
+  },
+};
+
+// common in JS to pass in object of options to a function. Can also destructuring right in function arguments right away.
 // restaurant.orderDelivery({
 //   time: '22:30',
 //   address: 'Via del Sole, 21',
@@ -145,3 +151,49 @@ console.log(badNewArr);
 
 const newArr = [1, 2, ...arr];
 console.log(newArr);
+
+console.log(...newArr);
+console.log(1, 2, 7, 8, 9);
+
+const newMenu = [...restaurant.mainMenu, 'Gnocchi'];
+// creating a completely new array.
+console.log(newMenu);
+
+// Two use cases of spread operators, creating shallow copies of arrays, and to merge arrays together.
+// Copy array == shallow copy, similar to Object.assign()
+const mainMenuCopy = [...restaurant.mainMenu];
+
+// Join 2 arrays together
+const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
+console.log(menu);
+
+// Iterables: arrays, strings, maps, sets, NOT objects.
+const str = 'Jonas';
+const letters = [...str, ' ', 'S.'];
+console.log(letters); // ['J', 'o', 'n', 'a', 's', ' ', 'S.']
+console.log(...str);
+// console.log(`${...str} Schmedtmann`) throws an error, not a place that expects multiple values separated by a comma
+
+// real world example
+// const ingredients = [
+//   prompt("Let's make pasta! Ingredient 1?"),
+//   prompt("Let's make pasta! Ingredient 2?"),
+//   prompt("Let's make pasta! Ingredient 3?"),
+// ];
+
+// console.log(ingredients);
+// old way to write it.
+// restaurant.orderPasta(ingredients[0], ingredients[1], ingredients[2]);
+
+// will write 3 elements of the array separated by commas
+// restaurant.orderPasta(...ingredients);
+
+// Objects
+const newRestaurant = { foundedIn: 1998, ...restaurant, founder: 'Guiseppe' };
+console.log(newRestaurant);
+
+// can do shallow copies of objects too, like with arrays.
+const restaurantCopy = { ...restaurant };
+restaurantCopy.name = 'Ristorante Roma';
+console.log(restaurantCopy.name);
+console.log(restaurant.name);
