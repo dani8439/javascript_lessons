@@ -43,8 +43,58 @@ const restaurant = {
       `Here is your delicious pasta with ${ing1}, ${ing2} and ${ing3}`
     );
   },
+  /// other ingredients are optional, rest parameters are perfect. Work a little like destructuring, the ... will collect all the rest of the arguments into an array
+  orderPizza: function (mainIngredient, ...otherIngredients) {
+    console.log(mainIngredient);
+    console.log(otherIngredients);
+  },
 };
 
+// 1) Destructuring
+///// Rest Pattern
+// Use case of building arrays.
+// SPREAD because on RIGHT side of =.
+const arr = [1, 2, ...[3, 4]];
+
+// However can use on left side of operator for destructuring. The REST Syntax
+const [a, b, ...others] = [1, 2, 3, 4, 5];
+console.log(a, b, others);
+
+// can use three dots on both sides of assignment operator
+const [pizza, , risotto, ...otherFood] = [
+  ...restaurant.mainMenu,
+  ...restaurant.starterMenu,
+];
+
+console.log(pizza, risotto, otherFood);
+
+// Objects
+const { sat, ...weekdays } = restaurant.openingHours;
+console.log(weekdays); // creates object containing only friday and thursday, already took saturday into its own variable before.
+
+// 2) Functions
+// How can we add as many arguments as we want without specifying number of arguments? Can use the REST parameters/syntax
+// The Rest syntax is taking multiple values, and packing into one array
+// Can now accept any number of parameters
+const add = function (...numbers) {
+  let sum = 0;
+  for (let i = 0; i < numbers.length; i++) sum += numbers[i];
+  console.log(sum);
+};
+
+add(2, 3);
+add(5, 3, 7, 2);
+add(8, 2, 5, 3, 2, 1, 4);
+
+// to take all the numbers and add them and pass in as arguments, can pass in with spread operator, they will then enter add function, and be immediately collected by the rest parameters. Unpack the values with spread, then pack back into with an array in the REST patern.
+const x = [23, 5, 7];
+add(...x);
+
+restaurant.orderPizza('mushrooms', 'onions', 'olives', 'spinach'); // all the remaining ingredients will be packed into an array.
+restaurant.orderPizza('mushrooms'); // remaining arguments stored into an empty array
+// Rest parameters serves to collect all the remaining/unused parameters
+
+/////////////////////////////////////////////////////////////////////////////
 // common in JS to pass in object of options to a function. Can also destructuring right in function arguments right away.
 // restaurant.orderDelivery({
 //   time: '22:30',
@@ -144,6 +194,7 @@ console.log(p, q, r);
 // } = openingHours;
 // console.log(o, c);
 
+//////////////////////////////////////////////////////////////////
 /*
 // Spread Operator
 const arr = [7, 8, 9];
