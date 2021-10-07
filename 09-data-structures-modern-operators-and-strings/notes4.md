@@ -15,4 +15,8 @@ And operand is only true if all operands are true. If first one is false, means 
 
 ## In Summary
 
-Or operator will return first truthy value of all the operands, or simply the last vlaue if all are falsy.
+OR operator will return first truthy value of all the operands, or simply the last vlaue if all are falsy.
+
+AND operator will return first falsy value, or last value if all are truthy.
+
+As for practical applications, can use the OR operator to set default values, and we can use the AND operator to execute code in the second operand if the first one is true.
