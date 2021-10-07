@@ -50,6 +50,41 @@ const restaurant = {
   },
 };
 
+// Logical Operators. Can use ANY data type, can return ANY data type, they do something called short circuiting or short circuit evaluation.
+console.log('--------- OR ---------');
+console.log(3 || 'Jonas'); // 3
+console.log('' || 'Jonas'); // Jonas as '' is falsy
+console.log(true || 0); // true
+console.log(undefined || null); // null as undefined is falsy, though null is a falsy value too
+
+console.log(undefined || 0 || '' || 'Hello' || 23 || null); /// Hello, because Hello is first truthy value in this chain of evaluations. Or operation, result is true if at least one operand is true. JS doesn't even have to look at other values. Result will be true anyway. So will short circuit and return the first result.
+
+// both will not work if number of guests is 0, because 0 is falsy
+restaurant.numGuests = 23;
+const guests1 = restaurant.numGuests ? restaurant.numGuests : 10;
+console.log(guests1);
+
+const guests2 = restaurant.numGuests || 10;
+console.log(guests2);
+
+console.log('--------- AND ---------');
+console.log(0 && 'Jonas'); // 0 because 0 is falsy
+console.log(7 && 'Jonas'); // Jonas -- as both are true
+
+console.log('Hello' && 23 && null && 'jonas'); // null as it short circuits at null as it's falsy
+
+// Practical example
+// Pretending that we don't know if orderPizza exists, if it exists, then we execute it. But can do in a simpler way with knowledge we've gained about the AND operand
+if (restaurant.orderPizza) {
+  restaurant.orderPizza('mushrooms', 'spinach');
+}
+
+// if restaurant.orderPizza is undefined and doesn't exist, it will short circuit and return nothing. If it does exists, and is a truthy value, then the second part will be evaluated, so can then call the function.
+restaurant.orderPizza && restaurant.orderPizza('mushrooms', 'spinach');
+
+/*
+///////////////////////////////////////////////////////////////////////////////////
+// Rest Pattern and Parameters
 // 1) Destructuring
 ///// Rest Pattern
 // Use case of building arrays.
@@ -93,6 +128,7 @@ add(...x);
 restaurant.orderPizza('mushrooms', 'onions', 'olives', 'spinach'); // all the remaining ingredients will be packed into an array.
 restaurant.orderPizza('mushrooms'); // remaining arguments stored into an empty array
 // Rest parameters serves to collect all the remaining/unused parameters
+*/
 
 /////////////////////////////////////////////////////////////////////////////
 // common in JS to pass in object of options to a function. Can also destructuring right in function arguments right away.
