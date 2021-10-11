@@ -50,6 +50,17 @@ const restaurant = {
   },
 };
 
+restaurant.numGuests = 0;
+const guests = restaurant.numGuests || 10;
+console.log(guests); // 10
+
+// Nullish: null and undefined (NOT 0 or ')
+const guestCorrect = restaurant.numGuests ?? 10;
+console.log(guestCorrect); // 0
+
+////////////////////////////////////////////////////////////////////////////
+/// Short Circuiting (&& and ||)
+/*
 // Logical Operators. Can use ANY data type, can return ANY data type, they do something called short circuiting or short circuit evaluation.
 console.log('--------- OR ---------');
 console.log(3 || 'Jonas'); // 3
@@ -81,6 +92,7 @@ if (restaurant.orderPizza) {
 
 // if restaurant.orderPizza is undefined and doesn't exist, it will short circuit and return nothing. If it does exists, and is a truthy value, then the second part will be evaluated, so can then call the function.
 restaurant.orderPizza && restaurant.orderPizza('mushrooms', 'spinach');
+*/
 
 /*
 ///////////////////////////////////////////////////////////////////////////////////
