@@ -50,6 +50,19 @@ const restaurant = {
   },
 };
 
+////////////////////////////////////////
+// Looping Arrays the For-of Loop
+const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
+
+for (const item of menu) console.log(item);
+
+for (const [i, el] of menu.entries()) {
+  console.log(`${i + 1}: ${el}`);
+  // Outputs 1: Focaccia, 2: Bruschetta etc etc
+}
+
+// console.log([...menu.entries()]);
+
 ///////////////////////////////////////
 // Coding Challenge #1
 
@@ -67,6 +80,7 @@ TEST DATA FOR 6: Use players 'Davies', 'Muller', 'Lewandowski' and 'Kimmich'. Th
 GOOD LUCK 😀
 */
 
+/*
 const game = {
   team1: 'Bayern Munich',
   team2: 'Borrussia Dortmund',
@@ -153,6 +167,7 @@ printGoals(...game.scored);
 // will not short circuit on true with && operator, will keep evaluating, unlike with OR that short circuits on true
 team1 < team2 && console.log('Team 1 is more likely to win');
 team1 > team2 && console.log('Team 1 is more likely to win');
+*/
 
 /////////////////////////////////////
 /// Nullish Coalescing Operator
