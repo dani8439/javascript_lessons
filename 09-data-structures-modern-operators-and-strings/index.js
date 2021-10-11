@@ -58,6 +58,41 @@ const restaurant = {
   },
 };
 
+/////////////////////////////////////////
+// Optional Chaining
+if (restaurant.openingHours && restaurant.openingHours.mon)
+  console.log(restaurant.openingHours.mon.open); // throws an error on its own without the if statement before to check. undefined.open causes an error.
+
+if (restaurant.openingHours.fri) console.log(restaurant.openingHours.fri.open); // 11
+
+/// WITH optional chaining
+console.log(restaurant.openingHours.mon?.open);
+console.log(restaurant.openinghours?.mon?.open);
+
+// Example:
+const days = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
+for (const day of days) {
+  // console.log(day);
+  // if want to use the variable name, can't use dot operator, have to use brackets.
+  // don't use || because throws error on Sat, as 0 is a falsy value. Use the nullish coalescing operator instead.
+  const open = restaurant.openingHours[day]?.open ?? 'closed';
+  console.log(`On ${day}, we open at ${open}`);
+  // same as openingHours.mon
+}
+
+// Methods
+console.log(restaurant.order?.(0, 1) ?? 'Method does not exist');
+console.log(restaurant.orderRisotto?.(0, 1) ?? 'Method does not exist');
+
+// Arrays
+const users = [{ name: 'Jonas', email: 'hello@jonas.io' }];
+// const users = [];
+
+console.log(users[0]?.name ?? 'User array empty');
+
+if (users.length > 0) console.log(users[0].name);
+else console.log('user array empty');
+
 ////////////////////////////////////////
 // Looping Arrays the For-of Loop
 /*
