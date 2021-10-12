@@ -15,7 +15,7 @@ And operand is only true if all operands are true. If first one is false, means 
 
 ## In Summary
 
-OR operator will return first truthy value of all the operands, or simply the last vlaue if all are falsy.
+OR operator will return first truthy value of all the operands, or simply the last value if all are falsy.
 
 AND operator will return first falsy value, or last value if all are truthy.
 
