@@ -59,14 +59,45 @@ const restaurant = {
 };
 
 ///////////////////////////////////////////////////
-// Sets 
-cont ordersSet = new Set()
+// Sets
+const ordersSet = new Set([
+  'Pasta',
+  'Pizza',
+  'Pizza',
+  'Risotto',
+  'Pasta',
+  'Pizza',
+]);
+console.log(ordersSet);
+
+console.log(new Set('Jonas')); // Set(5) {'J', 'o', 'n', 'a', 's'}
+
+console.log(ordersSet.size); // returns 3
+console.log(ordersSet.has('Pizza')); // returns true
+console.log(ordersSet.has('Bread')); // returns false
+ordersSet.add('Garlic Bread');
+ordersSet.add('Garlic Bread');
+ordersSet.delete('Risotto');
+// ordersSet.clear();
+console.log(ordersSet);
+
+for (const order of ordersSet) console.log(order);
+
+// Use Case for Sets
+const staff = ['Waiter', 'Chef', 'Waiter', 'Manager', 'Chef', 'Waiter'];
+const stuffUnique = [...new Set(staff)];
+console.log(stuffUnique);
+console.log(
+  new Set(['Waiter', 'Chef', 'Waiter', 'Manager', 'Chef', 'Waiter']).size
+); // 3
+
+console.log(new Set('jonasschmedtmann').size); // 11
 
 /*
 ///////////////////////////////////////
 // Coding Challenge #2
 
-/* 
+
 Let's continue with our football betting app!
 1. Loop over the game.scored array and print each player name to the console, along with the goal number (Example: "Goal 1: Lewandowski")
 2. Use a loop to calculate the average odd and log it to the console (We already studied how to calculate averages, you can go check if you don't remember)
@@ -84,6 +115,7 @@ BONUS: Create an object called 'scorers' which contains the names of the players
 GOOD LUCK 😀
 */
 
+/*
 const game = {
   team1: 'Bayern Munich',
   team2: 'Borrussia Dortmund',
