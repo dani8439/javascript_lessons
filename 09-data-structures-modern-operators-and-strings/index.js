@@ -58,6 +58,42 @@ const restaurant = {
   },
 };
 
+/////////////////////////////////////////////////////////////////
+// Looping Objects: Object Keys, Values and Entries
+
+// Property NAMES
+const properties = Object.keys(openingHours);
+// returns an array with the three property names
+console.log(properties);
+
+let openStr = `We are open on ${properties.length} days: `;
+
+// for (const day of Object.keys(openingHours)) {
+for (const day of properties) {
+  // get three key names of the object
+  // console.log(day);
+  openStr += `${day}, `;
+}
+console.log(openStr);
+
+// Property VALUES
+const values = Object.values(openingHours);
+console.log(values);
+// to loop over the entire object need the entries - name, plus value. Works different only objects, not a method we call on the object itself.
+
+// Entire object
+const entries = Object.entries(openingHours);
+// console.log(entries);
+
+// for (const x of entries) {
+// use destructuring to turn x into key, value (object), and then can immediately destructure that
+// [key, value] => becomes [key, {open, close}] <-- the names of the key/value pairs in the object.
+for (const [key, { open, close }] of entries) {
+  // console.log(x);
+  console.log(`On ${key} we open at ${open} and close at ${close}.`);
+}
+
+/*
 /////////////////////////////////////////
 // Optional Chaining
 if (restaurant.openingHours && restaurant.openingHours.mon)
@@ -92,6 +128,7 @@ console.log(users[0]?.name ?? 'User array empty');
 
 if (users.length > 0) console.log(users[0].name);
 else console.log('user array empty');
+*/
 
 ////////////////////////////////////////
 // Looping Arrays the For-of Loop
