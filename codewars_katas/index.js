@@ -30,35 +30,24 @@ function square(arg) {
 }
 
 // Multiples of 3 or 5 // solution 1
-// function solution(number) {
-//   let arr = [];
-//   let multiple = [];
-
-//   // turn the number into an array, [0, 1, 2, 3, 4...etc]
-//   for (let i = 0; i < number; i++) {
-//     arr.push(i);
-//   }
-
-//   // check to see if the number is a multiple of 3 or 5 using modulo operator, then push it onto multiple array
-//   for (let i = 0; i < arr.length; i++) {
-//     if (i % 3 === 0 || i % 5 === 0) {
-//       multiple.push(i);
-//     }
-//   }
-
-//   // sum the total of the multiple array
-//   const sumTotal = multiple.reduce((sum, num) => sum + num, 0);
-
-//   return sumTotal;
-// }
-
 function solution(number) {
-  let sum = 0;
+  let arr = [];
+  let multiple = [];
 
-  for (let i = 1; i < number; i++) {
-    if (i % 3 == 0 || i % 5 == 0) {
-      sum += i;
+  // turn the number into an array, [0, 1, 2, 3, 4...etc]
+  for (let i = 0; i < number; i++) {
+    arr.push(i);
+  }
+
+  // check to see if the number is a multiple of 3 or 5 using modulo operator, then push it onto multiple array
+  for (let i = 0; i < arr.length; i++) {
+    if (i % 3 === 0 || i % 5 === 0) {
+      multiple.push(i);
     }
   }
-  return sum;
+
+  // sum the total of the multiple array
+  const sumTotal = multiple.reduce((sum, num) => sum + num, 0);
+
+  return sumTotal;
 }
