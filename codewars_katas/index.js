@@ -13,3 +13,13 @@ function spinWords(str) {
   }
   return strArr.join(" ");
 }
+
+/// area or perimeter
+const areaOrPerimeter = function (l, w) {
+  // Return your answer
+  if (l === w) {
+    return l * l;
+  } else {
+    return (l + w) * 2;
+  }
+};
