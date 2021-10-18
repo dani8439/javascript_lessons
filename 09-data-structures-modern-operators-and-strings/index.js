@@ -60,7 +60,7 @@ const restaurant = {
 
 ////////////////////////////////////////////////////
 // Maps Iteration
-
+/*
 const question = new Map([
   ['question', 'What is the best programming language in the world?'],
   [1, 'C'],
@@ -95,6 +95,7 @@ console.log([...question]);
 // console.log(question.entries()); No need to use as it's exactly the same as question.keys()
 console.log([...question.keys()]); // gives a weird answer, so have to spread to put into a new array. console.log(question.keys())
 console.log([...question.values()]);
+*/
 
 ////////////////////////////////////////////////////
 // Maps
