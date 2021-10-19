@@ -94,3 +94,5 @@ Bad weather... All Departures Delayed Bad weather... All Departures Delayed Bad 
 ```
 
 Didn't talk about all string methods. Can search on MDN.
+
+Should look up `.concat()` and `.reverse()` (should be one, but there isn't, `.reverse()` is for arrays.)
