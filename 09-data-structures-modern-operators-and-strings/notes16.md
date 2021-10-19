@@ -54,7 +54,7 @@ Can also replace code with:
 
 Padding a string: means to add a number of characters to a string until the string has a certain desired length.
 
-Using `.padStart(arg1, arg2)` can add characters to a string. First argument passed in is the length we want for the string, second arg is the character we want to pad the string with.
+Using `.padStart(arg1, arg2)` can add characters to a string. First argument passed in is the length we want for the string, second arg is the character we want to pad the string with. **Default argument** for `.padStart()` can be how many characters, and then nothing, don't need a second argument if just want a blank space. (same for `.padEnd()`)
 
 Also `.padEnd()` and pad the end of the string.
 
