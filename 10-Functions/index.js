@@ -35,7 +35,7 @@ createBooking('LH123', undefined, 1000); // {flightNum: 'LH123', numPassengers: 
 
 //////////////////////////////////////
 // How Passing Arguments Work
-
+/*
 const flight = 'LH234';
 const jonas = {
   name: 'Jonas Schmedtmann',
@@ -68,3 +68,7 @@ const newPassport = function (person) {
 
 newPassport(jonas); // Check In
 checkIn(flight, jonas); // Wrong Passport
+*/
+
+////////////////////////////////////////////////
+// First-Class and Higher-Order Functions
