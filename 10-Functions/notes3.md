@@ -65,3 +65,6 @@ function count() { // Higher Order function
     }
 }
 ```
+
+First Class Functions and Higher Order Functions are not the same thing.
+F.C. functions is just a feature that a programming language has, or doesn't have. All it means is that all functions are values. There are no F.C. functions in practice, just a concept. There are however, Higher-order functions in practice, which are possible because the language supports First Class Functions. Subtle difference but worth noting if you want to talk JS like a JS master.
