@@ -58,3 +58,5 @@ There are many many other examples in the JS language. Callback functions are us
 What we did in our code example was to create a level of abstraction. Abstraction is something really important in programming. Basically, what it means is that we hide the detail of some code implementation as we don't really care about that detail. This allows us to think about problems at a higher, more abstract level. This is why it's called an abstraction.
 
 Coming back to the `transformer()` function, all it wants to do is transform a string, but it doesn't care how it's done. So we could have taken the code for `upperFirstWord()` or `oneWord()` and put it directly into the function, but instead we abstracted them away from the function, into their own functions. So the `transformer()` is only concerned with transforming the string, and delegates the work to the lower level functions.
+
+Makes sense that the `transformer()` function is referred to as the higher level function. They are not really called lower level/low level functions, but easier to understand the concept by calling them that for the sake of the lecture.
