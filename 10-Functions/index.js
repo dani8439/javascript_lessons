@@ -113,6 +113,7 @@ document.body.addEventListener('click', high5);
 
 ///////////////////////////////
 // Functions returning Functions
+/*
 const greet = function (greeting) {
   return function (name) {
     console.log(`${greeting} ${name}`);
@@ -139,3 +140,59 @@ const greetArr = greeting => {
 // const greetArr = greeting => name => console.log(`${greeting} ${name}`);
 
 greetArr('Hi')('Jonas');
+*/
+
+/////////////////////////////////
+// The Call and Apply Methods
+
+const lufthansa = {
+  airline: 'Lufthansa',
+  iataCode: 'LH',
+  bookings: [],
+  // writing the method this way (enhanced syntax) instead of writing book: function()
+  book(flightNum, name) {
+    console.log(
+      `${name} booked a seat on ${this.airline} flight ${this.iataCode}${flightNum}`
+    );
+    this.bookings.push({ flight: `${this.iataCode}${flightNum}`, name });
+  },
+};
+
+lufthansa.book(239, 'Jonas Schmedtmann');
+lufthansa.book(635, 'John Smith');
+console.log(lufthansa);
+
+const eurowings = {
+  airline: 'Eurowings',
+  iataCode: 'EW',
+  bookings: [],
+};
+
+const book = lufthansa.book;
+
+// Does NOT work.
+// book(23, 'Sarah Williams');
+
+// Call Method
+book.call(eurowings, 23, 'Sarah Williams'); // Sarah Williams booked a seat on Eurowings flight EW23
+console.log(eurowings); // {airline: 'Eurowings', iataCode: 'EW', bookings: Array(1)}
+
+book.call(lufthansa, 239, 'Mary Cooper'); // Mary Cooper booked a seat on Lufthansa flight LH239
+console.log(lufthansa); //{airline: 'Lufthansa', iataCode: 'LH', bookings: Array(3), book: ƒ}
+
+const swiss = {
+  airline: 'Swiss Air lines',
+  iataCode: 'LX',
+  bookings: [],
+};
+
+book.call(swiss, 583, 'Mary Cooper');
+console.log(swiss);
+
+// Apply Method
+const flightData = [583, 'George Cooper'];
+book.apply(swiss, flightData); // George Cooper booked a seat on Swiss Air lines flight LX583
+console.log(swiss); // {airline: 'Swiss Air lines', iataCode: 'LX', bookings: Array(2)}
+
+// better way: pass in the this, and then pass in the spread operator to take the data out of flightData.
+book.call(swiss, ...flightData);
