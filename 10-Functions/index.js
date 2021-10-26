@@ -72,6 +72,7 @@ checkIn(flight, jonas); // Wrong Passport
 
 ////////////////////////////////////////////////
 // First-Class and Higher-Order Functions
+/*
 const oneWord = function (str) {
   // replaces any spaces
   return str.replace(/ /g, '').toLowerCase();
@@ -81,6 +82,10 @@ const upperFirstWord = function (str) {
   // destructuring, and the REST pattern
   const [first, ...others] = str.split(' ');
   return [first.toUpperCase(), ...others].join(' ');
+};
+
+const addSpaces = function (str) {
+  return str.replace(/ /g, '  ');
 };
 
 // higher order function
@@ -93,6 +98,7 @@ const transformer = function (str, fn) {
 
 transformer('JavaScript is the best!', upperFirstWord);
 transformer('JavaScript is the best!', oneWord);
+transformer('JavaScript is the best!', addSpaces);
 
 // JS uses callbacks all the time.
 const high5 = function () {
@@ -103,3 +109,33 @@ document.body.addEventListener('click', high5);
 
 ['Jonas', 'Martha', 'Adam'].forEach(high5);
 // get 3 elements wavings in the console, because forEach will be called for each element.
+*/
+
+///////////////////////////////
+// Functions returning Functions
+const greet = function (greeting) {
+  return function (name) {
+    console.log(`${greeting} ${name}`);
+  };
+};
+
+const greeterHey = greet('Hey');
+greeterHey('Jonas'); // Hey Jonas
+greeterHey('Steven'); // Hey Steven
+
+// A function that we can immediately call
+greet('Hello')('Jonas'); // Hello Jonas
+
+/// Challenge rewrite function as an arrow function
+
+const greetArr = greeting => {
+  return name => {
+    console.log(`${greeting} ${name}`);
+  };
+};
+
+// He rewrote as:
+// It's a bit more confusing written as arrow functions.
+// const greetArr = greeting => name => console.log(`${greeting} ${name}`);
+
+greetArr('Hi')('Jonas');
