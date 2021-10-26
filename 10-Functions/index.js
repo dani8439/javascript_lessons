@@ -196,3 +196,51 @@ console.log(swiss); // {airline: 'Swiss Air lines', iataCode: 'LX', bookings: Ar
 
 // better way: pass in the this, and then pass in the spread operator to take the data out of flightData.
 book.call(swiss, ...flightData);
+
+// Bind method
+// book.call(eurowings, 23, 'Sarah Williams')
+const bookEW = book.bind(eurowings);
+const bookLH = book.bind(lufthansa);
+const bookLX = book.bind(swiss);
+bookEW(23, 'Steven Williams'); // Steven Williams booked a seat on Eurowings flight EW23
+
+const bookEW23 = book.bind(eurowings, 23);
+bookEW23('Jonas Schmedtmann'); // Jonas Schmedtmann booked a seat on Eurowings flight EW23
+bookEW23('Martha Cooper'); // Martha Cooper booked a seat on Eurowings flight EW23
+
+// With Event Listeners
+lufthansa.planes = 300;
+lufthansa.buyPlane = function () {
+  console.log(this);
+  // add a new plane whenever we click on Buy New Plane button on page.
+  this.planes++;
+  console.log(this.planes);
+};
+// lufthansa.buyPlane(); // 301
+
+// Callback function
+document
+  .querySelector('.buy')
+  .addEventListener('click', lufthansa.buyPlane.bind(lufthansa));
+
+// Partial Application (big use case for bind method)
+const addTax = (rate, value) => value + value * rate;
+console.log(addTax(0.1, 200)); // 220
+
+const addVAT = addTax.bind(null, 0.23);
+// same as writing:
+// addVat = value => value + value * rate;
+
+console.log(addVAT(100));
+console.log(addVAT(23));
+
+// Challenge
+const newTax = function (tax) {
+  return function (value) {
+    return value + value * tax;
+  };
+};
+
+const addVAT2 = newTax(0.23);
+console.log(addVAT2(100));
+console.log(addVAT2(23));
