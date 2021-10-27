@@ -359,3 +359,9 @@ const secureBooking = function () {
 
 // one function we call, that returns a new function, and stored inside booker variable which is also a function.
 const booker = secureBooking();
+
+booker(); // 1 passengers
+booker(); // 2 passengers
+booker(); // 3 passengers
+
+console.dir(booker);
