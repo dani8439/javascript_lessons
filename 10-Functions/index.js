@@ -320,6 +320,8 @@ poll.displayResults.call({ answers: [1, 5, 3, 9, 6, 1] });
 // BONUS TEST DATA 2: [1, 5, 3, 9, 6, 1]
 */
 
+/////////////////////IIFE
+/*
 const runOnce = function () {
   console.log('This will never run again');
 };
@@ -342,3 +344,18 @@ runOnce();
 
 console.log(isPrivate);
 console.log(notPrivate);
+*/
+
+const secureBooking = function () {
+  // cannot be accessed and manipulated from the outside.
+  let passengerCount = 0;
+
+  return function () {
+    // variable defined in parent function
+    passengerCount++;
+    console.log(`${passengerCount} passengers`);
+  };
+};
+
+// one function we call, that returns a new function, and stored inside booker variable which is also a function.
+const booker = secureBooking();
