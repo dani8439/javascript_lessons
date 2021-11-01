@@ -71,10 +71,11 @@ const currencies = new Map([
   ['GBP', 'Pound sterling'],
 ]);
 
-const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+// const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
 /////////////////////////////////////////////////
 
+/*
 let arr = ['a', 'b', 'c', 'd', 'e'];
 
 // SLICE
@@ -106,3 +107,32 @@ console.log([...arr, ...arr2]); // (10) ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h'
 
 // JOIN
 console.log(letters.join(' - ')); // a - b - c - d - e - f - g - h - i - j
+*/
+
+///// Looping forEach
+
+const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+
+// for (const movement of movements) {
+// how we access the counter variable in the for/of loop
+for (const [i, movement] of movements.entries()) {
+  if (movement > 0) {
+    console.log(`Movement ${i + 1}: You deposited ${movement}`);
+  } else {
+    console.log(`Movement ${i + 1}: You withdrew ${Math.abs(movement)}`);
+  }
+}
+
+console.log('---- FOREACH -----');
+movements.forEach(function (movement, index, array) {
+  if (movement > 0) {
+    console.log(`Movement: ${index + 1}: You deposited ${movement}`);
+  } else {
+    console.log(`Movement: ${index + 1}: You withdrew ${Math.abs(movement)}`);
+  }
+});
+
+// behind the scenes in iteration 0 calls an anonymous function without a name function(200)
+// 1: function(450)
+// 2: function(400)
+// until it reaches the end of the array.
