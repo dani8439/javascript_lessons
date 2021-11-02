@@ -61,6 +61,7 @@ const inputLoanAmount = document.querySelector('.form__input--loan-amount');
 const inputCloseUsername = document.querySelector('.form__input--user');
 const inputClosePin = document.querySelector('.form__input--pin');
 
+// Display the money properly
 const displayMovements = function (movements) {
   // removes the values that were there initially.
   containerMovements.innerHTML = '';
@@ -81,6 +82,26 @@ const displayMovements = function (movements) {
 };
 
 displayMovements(account1.movements);
+
+// compute the usernames properly
+
+const createUsernames = function (accs) {
+  accs.forEach(function (acc) {
+    acc.username = acc.owner
+      .toLowerCase()
+      .split(' ')
+      .map(function (name) {
+        return name[0];
+      })
+      // can be rewritten as:  .map(name => name[0]);
+      .join('');
+  });
+};
+
+createUsernames(accounts);
+console.log(accounts);
+
+// console.log(createUsernames('Steven Thomas Williams')); // stw
 
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
@@ -222,7 +243,7 @@ checkDogs([9, 16, 6, 8, 3], [10, 5, 6, 1, 4]);
 */
 
 ////// the map method
-
+/*
 const eurToUsd = 1.1;
 
 const movementsUSD = movements.map(function (mov) {
@@ -247,3 +268,4 @@ const movementsDescriptions = movements.map(
 );
 
 console.log(movementsDescriptions);
+*/
