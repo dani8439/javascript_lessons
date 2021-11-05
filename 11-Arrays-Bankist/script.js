@@ -660,7 +660,7 @@ console.log(movements); // (8) [3000, 1300, 450, 200, 70, -130, -400, -650]
 
 ////////////////////////////////////////////////////////
 // More ways of Creating and Filling Arrays
-
+/*
 // Fill method
 const arr = [1, 2, 3, 4, 5, 6, 7];
 console.log(new Array(1, 2, 3, 4, 5, 6, 7));
@@ -699,3 +699,7 @@ labelBalance.addEventListener('click', function () {
 
   const movementsUI2 = [...document.querySelectorAll('.movements__value')];
 });
+*/
+
+///////////////////
+// Which Array Methods to Use?
