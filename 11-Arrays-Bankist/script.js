@@ -702,4 +702,80 @@ labelBalance.addEventListener('click', function () {
 */
 
 ///////////////////
-// Which Array Methods to Use?
+// Array Practice Methods
+
+// 1.
+// Get all the movements out of the account array, flatten it, filter it for positive values, and then add all together.
+// const bankDepostSum = accounts.map(acc => acc.movements).flat();
+// can become:
+const bankDepostSum = accounts
+  .flatMap(acc => acc.movements)
+  .filter(mov => mov > 0)
+  .reduce((sum, cur) => sum + cur, 0);
+
+console.log(bankDepostSum);
+
+// 2. Count how many deposits have been in the bank with at least $1000.
+// One way of doing it:
+// const numDeposits1000 = accounts
+//   .flatMap(acc => acc.movements)
+//   .filter(mov => mov >= 1000).length;
+
+const numDeposits1000 = accounts
+  .flatMap(acc => acc.movements)
+  .reduce((count, cur) => (cur >= 1000 ? count + 1 : count), 0);
+// .reduce((count, cur) => (cur >= 1000 ? ++count : count), 0);
+
+// reduce always has the snowball, accumulator as first arg. in other example, it's previous sum + current value.
+// in this case, our accumulator will be the number of movements that are > 1000. Start counting at 0. That initial value is like storing anything outside of a loop, where we keep storing a new value. That new value might very well be a counter where we update depending on position. What matters is that our reduce function here works. We can even use reduce to simply count something in an array. What's important to keep in mind, is we have this accumulator value outside (0), which we can use to reduce the array down to whatever we want. In this case it's a counter, but we can do anything. The count + 1, know there is an operator for simply adding 1. ++. But, it doesn't work. With the ++ operator
+
+console.log(numDeposits1000);
+
+// Prefixed ++ operator
+let a = 10;
+// console.log(a++); // 10
+console.log(++a); // 11
+
+// 3.
+// const sums = accounts
+//   .flatMap(acc => acc.movements)
+//   .reduce(
+//     (sums, cur) => {
+//       cur > 0 ? (sums.deposits += cur) : (sums.withdrawals += cur);
+//       return sums;
+//     },
+//     { deposits: 0, withdrawals: 0 }
+//   );
+// console.log(sums); // {deposits: 25180, withdrawals: -7340}
+
+// destructure it immediately:
+const { deposits, withdrawals } = accounts
+  .flatMap(acc => acc.movements)
+  .reduce(
+    (sums, cur) => {
+      // cur > 0 ? (sums.deposits += cur) : (sums.withdrawals += cur);
+      sums[cur > 0 ? 'deposits' : 'withdrawals'] += cur;
+      return sums;
+    },
+    { deposits: 0, withdrawals: 0 }
+  );
+console.log(deposits, withdrawals); //  25180, -7340}
+
+// 4.
+// this is a nice title -> This is a Nice Title
+const convertTitleCase = function (title) {
+  const capitalize = str => str[0].toUpperCase() + str.slice(1);
+
+  const exceptions = ['a', 'an', 'and', 'the', 'but', 'or', 'on', 'in', 'with'];
+
+  const titleCase = title
+    .toLowerCase()
+    .split(' ')
+    .map(word => (exceptions.includes(word) ? word : capitalize(word)))
+    .join(' ');
+
+  return capitalize(titleCase);
+};
+console.log(convertTitleCase('this is a nice title'));
+console.log(convertTitleCase('this is a LONG title but not too long'));
+console.log(convertTitleCase('and here is another title with an EXAMPLE'));

@@ -5,21 +5,25 @@ We have studied 23 different array methods. That's amazing. That means can now d
 The best way to figure out which method to use, is by starting to ask, what do I actually want from this method?
 
 **Do I want to mutate the original array?**
+
 👉 Add to original:
 `.push` (end)
 `.unshift` (start)
 
 👉 Remove from original:
+
 `.pop` (end)
 `.shift` (start)
 `.splice` (any)
 
 👉 Others:
+
 `.reverse`
 `.sort`
 `.fill`
 
 **Do I want a new Array?**
+
 👉 Computed from original:
 `.map` (loop)
 
@@ -37,6 +41,7 @@ The best way to figure out which method to use, is by starting to ask, what do I
 `.flatMap`
 
 **Do I want an Array Index?**
+
 👉 Based on value:
 `.indexOf`
 
@@ -44,10 +49,12 @@ The best way to figure out which method to use, is by starting to ask, what do I
 `.findIndex`
 
 **Do I want an Array element?**
+
 👉 Based on a test condition:
 `.find`
 
 **Do I want to know if an array includes?**
+
 _returns a boolean value_
 👉 Based on value:
 `.includes`
@@ -57,16 +64,19 @@ _returns a boolean value_
 `.every` (all)
 
 **Do I want a new string?**
+
 👉 Based on separator string:
 `.join`
 
 **Do I want to transform to a value?**
+
 👉 Based on accumulator:
 `.reduce`
 
 _(Boils down array to single value of any type: number, string, boolean, or even new array or object)_
 
 **Do I want to just loop over an array?**
+
 👉 Based on callback:
 `.forEach`
 
