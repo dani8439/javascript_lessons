@@ -116,7 +116,7 @@ To recap, we used `Array.from()` to create an array from the results of the `que
 There is another way of converting it all to an array. Can spread the results into a new array.
 
 ```
-movementsUI2 = [...document.querySelectorAll('.movements__value')];
+const movementsUI2 = [...document.querySelectorAll('.movements__value')];
 ```
 
 Also creates an array, but then we would have to do the mapping separately, so the other way is a little cleaner.
