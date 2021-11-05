@@ -629,7 +629,7 @@ console.log(overalBalance3); // 17840
 
 //////////////////////////
 // Sorting Arrays
-
+/*
 // Strings
 const owners = ['Jonas', 'Zach', 'Adam', 'Martha'];
 console.log(owners.sort());
@@ -656,3 +656,46 @@ console.log(movements); // [-650, -400, -130, 70, 200, 450, 1300, 3000]
 // });
 movements.sort((a, b) => b - a);
 console.log(movements); // (8) [3000, 1300, 450, 200, 70, -130, -400, -650]
+*/
+
+////////////////////////////////////////////////////////
+// More ways of Creating and Filling Arrays
+
+// Fill method
+const arr = [1, 2, 3, 4, 5, 6, 7];
+console.log(new Array(1, 2, 3, 4, 5, 6, 7));
+
+// Empty arrays + fill method
+const x = new Array(7);
+console.log(x); // (7) [empty × 7]
+// console.log(x.map(() => 5)); // (7) [empty × 7]
+
+x.fill(1, 3, 5);
+x.fill(1);
+console.log(x);
+
+arr.fill(23, 2, 6);
+console.log(arr); // (7) [1, 2, 3, 4, 23, 23, 7]
+
+// Array.from
+const y = Array.from({ length: 7 }, () => 1);
+console.log(y); // (7) [1, 1, 1, 1, 1, 1, 1]
+
+// const z = Array.from({ length: 7 }, (cur, i) => i + 1);
+const z = Array.from({ length: 7 }, (_, i) => i + 1);
+console.log(z); // (7) [1, 2, 3, 4, 5, 6, 7]
+
+const dice = Array.from({ length: 100 }, (_, i) =>
+  Math.floor(Math.random() * 7)
+);
+console.log(dice);
+
+labelBalance.addEventListener('click', function () {
+  const movementsUI = Array.from(
+    document.querySelectorAll('.movements__value'),
+    el => Number(el.textContent.replace('€', ''))
+  );
+  console.log(movementsUI);
+
+  const movementsUI2 = [...document.querySelectorAll('.movements__value')];
+});
