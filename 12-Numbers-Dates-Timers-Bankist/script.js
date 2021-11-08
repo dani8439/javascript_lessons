@@ -337,7 +337,7 @@ console.log(+(2.345).toFixed(2)); // 2.35 NUMBER
 
 //////////////////////
 // The Remainder Operator
-
+/*
 console.log(5 % 2); // 1
 console.log(5 / 2); // 5 = 2 * 2 + 1
 
@@ -369,3 +369,42 @@ labelBalance.addEventListener('click', function () {
 });
 
 // Nth
+*/
+
+///////////////
+// Working with BigInt
+console.log(2 ** 53 - 1); // 9007199254740991
+console.log(Number.MAX_SAFE_INTEGER); // 9007199254740991
+console.log(2 ** 53 + 1); // 9007199254740992
+console.log(2 ** 53 + 2);
+console.log(2 ** 53 + 3);
+console.log(2 ** 53 + 4);
+
+console.log(4822384234824829349234923498294928343294); // 4.8223842348248294e+39
+console.log(4822384234824829349234923498294928343294n); // 4822384234824829349234923498294928343294n
+console.log(4822384234824829349234923498294928343294); // 4.8223842348248294e+39
+console.log(BigInt(4822384234824829349234923498294928343294)); // 4822384234824829355742065295432158806016n
+
+// Operations
+console.log(10000n + 10000n); // 20000n
+console.log(3646488248288838483483484384891919n * 10000000n); // 36464882482888384834834843848919190000000n
+// console.log(Math.sqrt(16n)); // UnCaught Type Error
+
+const huge = 2030040040139392929293n;
+const num = 23;
+// console.log(huge * num); // UncaughtTypeError: Cannot mix BigInt and other types
+console.log(huge * BigInt(num)); // 46690920923206037373739n
+
+// Exceptions
+console.log(20n > 15); // true
+console.log(20n === 20); // false
+console.log(typeof 20n); // bigint
+console.log(20 === 20); // true
+console.log(20n == '20'); // true
+
+console.log(huge + ' is REALLY big!!!'); // 2030040040139392929293 is REALLY big!!!
+
+// Divisions
+console.log(10n / 3n); // 3n
+console.log(10 / 3);
+console.log(12n / 3n); // 4n
