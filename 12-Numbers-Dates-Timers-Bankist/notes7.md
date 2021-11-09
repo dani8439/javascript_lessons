@@ -105,3 +105,4 @@ Problem here is entire user interface is in English, but weekday and month in Po
 Now we've localized one day, need to do it with the movements.
 
 Documentation is on MDN. MDN intl
+Will find all kinds of functions we can do with it, besides Dates. Can format Lists, or words, and their plurals. .
