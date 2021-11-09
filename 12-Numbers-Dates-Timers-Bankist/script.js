@@ -186,14 +186,45 @@ const updateUI = function (acc) {
   calcDisplaySummary(acc);
 };
 
+const startLogoutTimer = function () {
+  // move logic into separate function to call it at start, so that timer doesn't crap up and have a lag when it starts.
+  const tick = function () {
+    const min = String(Math.trunc(time / 60)).padStart(2, '0');
+    const seconds = String(time % 60).padStart(2, 0);
+    // In each call, print the remaining time to the UI
+    labelTimer.textContent = `${min}:${seconds}`;
+
+    // When 0 seconds, stop timer and log out user.
+    if (time === 0) {
+      clearInterval(timer);
+
+      labelWelcome.textContent = 'Log in to get started';
+      containerApp.style.opacity = 0;
+    }
+
+    // Decrease by 1 second
+    // time = time - 1;
+    time--;
+  };
+  // Set time to 5 minutes
+  let time = 300;
+
+  // call the timer every second
+  tick();
+  const timer = setInterval(tick, 1000);
+  // need to return the timer to clear it so there aren't multiple timers running at once.
+  return timer;
+};
+
 ///////////////////////////////////////
 // Event handlers
-let currentAccount;
+// both need to be in parent scope, need them to persist between people logging in and out. Only way to check that it appears, is if they are in the parent scope of this function scope.
+let currentAccount, timer;
 
 // FAKE ALWAYS LOGGED IN
-currentAccount = account1;
-updateUI(currentAccount);
-containerApp.style.opacity = 100;
+// currentAccount = account1;
+// updateUI(currentAccount);
+// containerApp.style.opacity = 100;
 
 btnLogin.addEventListener('click', function (e) {
   // Prevent form from submitting
@@ -240,6 +271,11 @@ btnLogin.addEventListener('click', function (e) {
     inputLoginUsername.value = inputLoginPin.value = '';
     inputLoginPin.blur();
 
+    // Timer
+    // if timer exists, it'll be cleared.
+    if (timer) clearInterval(timer);
+    timer = startLogoutTimer();
+
     // Update UI
     updateUI(currentAccount);
   }
@@ -269,6 +305,10 @@ btnTransfer.addEventListener('click', function (e) {
 
     // Update UI
     updateUI(currentAccount);
+
+    // Reset timer
+    clearInterval(timer);
+    timer = startLogoutTimer();
   }
 });
 
@@ -287,6 +327,10 @@ btnLoan.addEventListener('click', function (e) {
 
       // Update UI
       updateUI(currentAccount);
+
+      // Reset timer
+      clearInterval(timer);
+      timer = startLogoutTimer();
     }, 2500);
   }
   inputLoanAmount.value = '';
@@ -575,6 +619,7 @@ console.log(
 // Timers
 
 // setTimeout
+/*
 const ingredients = ['olives', 'spinach'];
 
 const pizzaTimer = setTimeout(
@@ -595,3 +640,4 @@ setInterval(function () {
   const seconds = `${now.getSeconds()}`;
   console.log(`The time is now: ${hour}:${min}:${seconds}`);
 }, 10000);
+*/
