@@ -80,3 +80,12 @@ document
 ```
 
 DOM Traversing is when you move up and down by selecting parent or child etc.
+
+Already learned about `.insertAdjacentHTML()` method in another lecture. However, to review, select an element, then `insertAdjacentHTML`, and then say position:
+
+```
+var h = document.getElementById("myH2");
+h.insertAdjacentHTML("afterend", "<p>My new paragraph</p>");
+```
+
+The `insertAdjacentHTML()` method inserts a text as HTML into a specified position: `"afterbegin", "afterend", "beforebegin", "beforeend"`
