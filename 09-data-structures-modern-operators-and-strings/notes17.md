@@ -47,4 +47,4 @@ Can be written as the And assignment operator
 rest1.owner &&= '<ANONYMOUS>';
 ```
 
-Assigns a value to a variable if it is currently Truthy. If falsy, it won't. So it doesn't work in the one restaurant where there is no owner, it stays the same.
+Assigns a value to a variable if it is currently Truthy. If falsy, it won't. So it doesn't work in the one restaurant where there is no owner, it stays the same. But the Giovanni one exists, so it was reassigned.
