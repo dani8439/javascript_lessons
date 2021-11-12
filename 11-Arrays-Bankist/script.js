@@ -808,6 +808,7 @@ const dogs = [
 ];
 GOOD LUCK 😀
 */
+/*
 
 const dogs = [
   { weight: 22, curFood: 250, owners: ['Alice', 'Bob'] },
@@ -874,3 +875,18 @@ console.log(okayDogs);
 
 const dogsCopy = dogs.slice().sort((a, b) => a.recFood - b.recFood);
 console.log(dogsCopy);
+*/
+
+///////// At method
+
+const arr = [23, 11, 64];
+console.log(arr[0]);
+console.log(arr.at(0));
+
+// Two traditional ways of getting the last element.
+console.log(arr[arr.length - 1]);
+console.log(arr.slice(-1)[0]);
+console.log(arr.at(-1));
+
+console.log('jonas'.at(0)); // j
+console.log('jonas'.at(-1)); // s
