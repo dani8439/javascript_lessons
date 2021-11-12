@@ -33,6 +33,7 @@ document.addEventListener('keydown', function (e) {
 /////////////////////////////////////////////////////
 
 // Selecting elements
+/*
 
 console.log(document.documentElement);
 console.log(document.head);
@@ -120,3 +121,40 @@ logo.classList.contains('c'); // not includes like it's called with arrays.
 
 // Don't use
 // logo.className = 'jonas';
+*/
+
+//// Smooth scrolling
+const btnScrollTo = document.querySelector('.btn--scroll-to');
+const section1 = document.querySelector('#section--1');
+
+btnScrollTo.addEventListener('click', function (e) {
+  // get coordinates where we want to scroll to
+  const s1coords = section1.getBoundingClientRect();
+  console.log(s1coords);
+
+  console.log(e.target.getBoundingClientRect());
+
+  console.log('Current scroll (X/Y)', window.pageXOffset, window.pageYOffset);
+
+  console.log(
+    'height/width viewport',
+    document.documentElement.clientHeight,
+    document.documentElement.clientWidth
+  );
+
+  // Scrolling
+  // top is relative to the viewport, not the document. Won't work more than once.
+  // window.scrollTo(
+  //   s1coords.left + window.pageXOffset,
+  //   s1coords.top + window.pageYOffset
+  // );
+
+  // window.scrollTo({
+  //   left: s1coords.left + window.pageXOffset,
+  //   top: s1coords.top + window.pageYOffset,
+  //   behavior: 'smooth',
+  // });
+
+  // new way to do it without any of the weird calculations works the same
+  section1.scrollIntoView({ behavior: 'smooth' });
+});
