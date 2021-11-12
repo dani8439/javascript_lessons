@@ -33,7 +33,7 @@ document.addEventListener('keydown', function (e) {
 /////////////////////////////////////////////////////
 
 // Selecting elements
-/*
+
 console.log(document.documentElement);
 console.log(document.head);
 console.log(document.body);
@@ -72,7 +72,51 @@ document
     // How elements used to be removed.
     // message.parentElement.removeChild(message)
   });
-*/
 
 ////////////////////////////
 // Styles, Attributes, and Classes
+message.style.backgroundColor = '#37383d';
+message.style.width = '120%';
+
+console.log(message.style.height);
+console.log(message.style.backgroundColor);
+
+console.log(getComputedStyle(message).color); // rgb(187, 187, 187)
+console.log(getComputedStyle(message).height); // 50px
+
+message.style.height =
+  Number.parseFloat(getComputedStyle(message).height, 10) + 30 + 'px';
+
+document.documentElement.style.setProperty('--color-primary', 'orangered');
+
+//// Attributes
+const logo = document.querySelector('.nav__logo');
+console.log(logo.alt); // Bankist logo
+console.log(logo.src); // http://127.0.0.1:8080/img/logo.png
+console.log(logo.className); // nav__logo
+
+logo.alt = 'Beautiful minimalist logo';
+
+// Non-standard
+console.log(logo.designer); // undefined
+console.log(logo.getAttribute('designer')); // Jonas
+logo.setAttribute('company', 'Bankist');
+
+console.log(logo.src); // http://127.0.0.1:8080/img/logo.png
+console.log(logo.getAttribute('src')); // img/logo.png
+
+const link = document.querySelector('.nav__link--btn');
+console.log(link.href); // http://127.0.0.1:8080/#
+console.log(link.getAttribute('href')); // #
+
+// Data Attributes
+console.log(logo.dataset.versionNumber);
+
+// Classes
+logo.classList.add('c', 'j');
+logo.classList.remove('c', 'j');
+logo.classList.toggle('c');
+logo.classList.contains('c'); // not includes like it's called with arrays.
+
+// Don't use
+// logo.className = 'jonas';
