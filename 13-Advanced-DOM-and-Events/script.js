@@ -185,7 +185,7 @@ const stickyNav = function (entries) {
 const headerObserver = new IntersectionObserver(stickyNav, {
   root: null,
   threshold: 0, // when 0percent of header is visible, we want something to happen.
-  rootMargin: `-${navHeight}`,
+  rootMargin: `-${navHeight}px`,
 });
 headerObserver.observe(header);
 
