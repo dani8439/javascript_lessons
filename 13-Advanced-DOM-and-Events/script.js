@@ -194,7 +194,7 @@ const allSections = document.querySelectorAll('.section');
 
 const revealSection = function (entries, observer) {
   const [entry] = entries;
-  console.log(entry);
+  // console.log(entry);
 
   // guard clause, if not intersecting, return right away. If it is, then code will be executed.
   if (!entry.isIntersecting) return;
@@ -213,6 +213,34 @@ allSections.forEach(function (section) {
   sectionObserver.observe(section);
   section.classList.add('section--hidden');
 });
+
+// Lazy Loading images
+// select all images with property of data-src
+const imgTargets = document.querySelectorAll('img[data-src]');
+// console.log(imgTargets);
+
+const loadImg = function (entries, observer) {
+  const [entry] = entries;
+  console.log(entry);
+
+  if (!entry.isIntersecting) return;
+
+  // Replace the src attribute with data-src -- Main functionality
+  entry.target.src = entry.target.dataset.src;
+
+  entry.target.addEventListener('load', function () {
+    entry.target.classList.remove('lazy-img');
+  });
+
+  observer.unobserve(entry.target);
+};
+
+const imgObserver = new IntersectionObserver(loadImg, {
+  root: null,
+  threshold: 0,
+});
+
+imgTargets.forEach(img => imgObserver.observe(img));
 
 /////////////////////////////////////////////////////
 /////////////////////////////////////////////////////
