@@ -221,7 +221,7 @@ const imgTargets = document.querySelectorAll('img[data-src]');
 
 const loadImg = function (entries, observer) {
   const [entry] = entries;
-  console.log(entry);
+  // console.log(entry);
 
   if (!entry.isIntersecting) return;
 
@@ -238,6 +238,8 @@ const loadImg = function (entries, observer) {
 const imgObserver = new IntersectionObserver(loadImg, {
   root: null,
   threshold: 0,
+  // so it loads in background and user doesn't notice the effect. Before 200 px of the images is loaded, image loads and we don't see any delay.
+  rootMargin: '+200px',
 });
 
 imgTargets.forEach(img => imgObserver.observe(img));
