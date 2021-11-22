@@ -2,7 +2,7 @@
 
 ////////////////////////////////////////////////
 // Constructor Functions and the new Operator
-/*
+
 const Person = function (firstName, birthYear) {
   //   console.log(this);
   // Instance Properties
@@ -17,6 +17,14 @@ const Person = function (firstName, birthYear) {
 
 const jonas = new Person('Jonas', 1991);
 console.log(jonas);
+
+Person.hey = function () {
+  console.log('Hey there 👋');
+  console.log(this);
+};
+
+Person.hey();
+// jonas.hey();
 
 // 1. New {} is created
 // 2. function is called, this = {}
@@ -81,7 +89,6 @@ console.log(arr.unique());
 const h1 = document.querySelector('h1');
 console.dir(h1);
 console.dir(x => x + 1);
-*/
 
 ///////////////////////////////////////
 // Coding Challenge #1
@@ -142,6 +149,7 @@ class PersonCl {
     this.birthYear = birthYear;
   }
 
+  // Instance Methods
   // Methods will be added to the .prototype property
   calcAge() {
     console.log(2037 - this.birthYear);
@@ -165,6 +173,12 @@ class PersonCl {
   get fullName() {
     return this._fullName;
   }
+
+  // Static Method
+  static hey() {
+    console.log('Hey there 👋');
+    console.log(this);
+  }
 }
 
 const jessica = new PersonCl('Jessica Davis', 1996);
@@ -180,6 +194,8 @@ console.log(jessica.__proto__ === PersonCl.prototype);
 jessica.greet();
 
 const walter = new PersonCl('Walter White', 1965);
+
+PersonCl.hey();
 
 ////////////////////////
 // Getters and Setters
