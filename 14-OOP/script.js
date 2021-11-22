@@ -217,3 +217,30 @@ console.log(account.latest);
 
 account.latest = 50;
 console.log(account.movements); // (5) [200, 530, 120, 300, 50]
+
+/////////////////
+// Object.create
+
+const PersonProto = {
+  calcAge() {
+    console.log(2037 - this.birthYear);
+  },
+
+  // looks a bit like constructor function from earlier. But has nothing to do with it. Not using new to call it.
+  init(firstName, birthYear) {
+    this.firstName = firstName;
+    this.birthYearh = birthYear;
+  },
+};
+
+const steven = Object.create(PersonProto);
+console.log(steven);
+steven.name = 'Steven';
+steven.birthYear = 2002;
+steven.calcAge(); // 35
+
+console.log(steven.__proto__ === PersonProto);
+
+const sarah = Object.create(PersonProto);
+sarah.init('Sarah', 1979);
+sarah.calcAge;
