@@ -41,3 +41,5 @@ Let's override one of the methods in the parent class. Just add a new one.
 ```
 
 This new `calcAge()` method will override what's in the prototype chain, because it's what appears first in the prototype chain. Don't need to look up into the parent class to find it. The `calcAge()` method is shadowing the one that's in the parent class.
+
+This mechanism of inheritance that we explored here, can actually be very problematic and dangerous in the real world. However, that's a topic for another day. Will talk a little bit about this when we talk about functional programming, kind of the alternative to object oriented programming.
