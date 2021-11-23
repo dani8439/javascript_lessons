@@ -512,7 +512,7 @@ class Account {
   }
 
   withdraw(val) {
-    this.desposit(-val);
+    this.deposit(-val);
   }
 
   approveLoan(val) {

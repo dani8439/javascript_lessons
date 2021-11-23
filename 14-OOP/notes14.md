@@ -88,4 +88,4 @@ Say wanted to do an `approveLoan` and `requestLoan` method:
     }
 ```
 
-In the public interface we only want the `requestLoan()` method.
+In the public interface we only want the `requestLoan()` method. But we're able to call `acc1.approveLoan()` too. In real world, shouldn't be allowed to access the method. It's an internal method, only `requestLoan()` method should be able to accesss. Really need Data Encapsulation, and Data Privacy.
