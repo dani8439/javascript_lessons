@@ -15,11 +15,11 @@ function christmassifyName() {
   //- Check whether christmassifierBtn has christmassify on it. If so, change text to "De-christmassify", if not, change text to "Christmassify"
 }
 
-const url = "https://www.youtube.com/watch?v=aAkMkVFwAoo";
+// const url = "https://www.youtube.com/watch?v=aAkMkVFwAoo";
 
-function playAudio(url) {
-  new AudioBuffer(url);
-}
+// function playAudio(url) {
+//   new AudioBuffer(url);
+// }
 
 // Stretch goals:
 // - Play Christmas music when Christmas class is added.
