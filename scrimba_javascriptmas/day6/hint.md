@@ -1,0 +1,2 @@
+- use a conditional to check the innerText of the button
+- use classList.toggle to switch from Christmas to non-Christmas
