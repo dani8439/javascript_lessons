@@ -1,0 +1,62 @@
+:root {
+  --wine-red: #c7375f;
+  --bright-red: #d42d2f;
+  --dark-green: #344d2f;
+  --light-green: #77a047;
+  --gold: #fac57d;
+  --snow: #f0f4f7;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body,
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+body {
+  background-color: var(--wine-red);
+  height: 100vh;
+}
+
+.container {
+  background: var(--snow);
+  flex-direction: column;
+  border-radius: 10px;
+  padding: 3em;
+  min-width: 350px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px,
+    rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+}
+
+p {
+  font-size: 45px;
+}
+
+.radio-container {
+  width: 200px;
+  font-size: 22px;
+}
+
+.christmas {
+  font-family: "Mountains of Christmas", cursive;
+  color: var(--dark-green);
+  background-color: var(--wine-red);
+}
+
+.snow {
+  font-family: "Lobster Two", cursive;
+  color: var(--snow);
+  background-color: var(--snow);
+}
+
+.snow .container {
+  color: #f0f4f7;
+  background-color: var(--dark-green);
+}
