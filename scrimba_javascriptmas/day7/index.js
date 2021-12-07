@@ -17,6 +17,7 @@ pauseBtn.addEventListener("click", () => {
 
 stopBtn.addEventListener("click", () => {
   bells.pause();
+  bells.currentTime = 0;
 });
 
 // Stretch goals:
