@@ -148,3 +148,11 @@ const getCountryData = function (country) {
 `finally` works because `catch` itself also returns a promise.
 
 404 Error - not a real error, but kind of is. 404 error if put in country name that doesn't exist.
+
+```
+getCountryData('dhshshshsh');
+```
+
+Get back a weird error, a TypeError, can't read property of flag. Not quite true, it's that the country doesn't exist. But above see a 404 error.
+
+Promsies only reject when no internet. But with a 404 error, the fetch promise will still get fulfilled. No rejection, so our catch handler can't pick up on the proper error. We really want to tell teh user no country was found. Will do that in next lecture.
