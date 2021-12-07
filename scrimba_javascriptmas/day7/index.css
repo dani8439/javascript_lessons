@@ -1,0 +1,69 @@
+:root {
+  --wine-red: #c7375f;
+  --bright-red: #d42d2f;
+  --dark-green: #344d2f;
+  --light-green: #77a047;
+  --gold: #fac57d;
+  --snow: #f0f4f7;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body,
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+body {
+  background-color: var(--bright-red);
+  height: 100vh;
+}
+
+.container {
+  background: var(--snow);
+  color: var(--wine-red);
+  flex-direction: column;
+  border-radius: 10px;
+  padding: 1em;
+  font-size: 35px;
+  min-width: 300px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px,
+    rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+}
+
+.material-icons-outlined {
+  padding-top: 5px;
+  margin: 0;
+  font-size: 30px;
+}
+
+button {
+  padding: 0.25em 0.5em;
+  border: none;
+  font-size: 1.2rem;
+  background-color: var(--dark-green);
+  color: var(--snow);
+  border-radius: 50%;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px,
+    rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+}
+
+button:hover {
+  cursor: pointer;
+  transform: scale(1.02);
+}
+
+.pause-btn {
+  background-color: var(--gold);
+  color: var(--wine-red);
+}
+
+.stop-btn {
+  background-color: var(--wine-red);
+}
