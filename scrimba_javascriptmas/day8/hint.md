@@ -1,0 +1,2 @@
+- transform: rotate
+- animation-direction
