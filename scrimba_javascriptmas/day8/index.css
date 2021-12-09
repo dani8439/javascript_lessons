@@ -86,6 +86,16 @@ button:hover {
   }
 }
 
+/* Their solution  */
+/* @keyframes ring {
+    0% {
+        transform: rotate(30deg)
+    }
+    100% {
+        transform: rotate(-30deg)        
+    }
+} */
+
 /* .paused {
   animation-play-state: paused;
 } */
