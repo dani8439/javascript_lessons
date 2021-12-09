@@ -20,8 +20,8 @@ const renderCountry = function (data, className = '') {
               Object.values(data.currencies)[0].name
             }</p>
           </div>
-        </article>
-  `;
+          </article>
+          `;
 
   countriesContainer.insertAdjacentHTML('beforeend', html);
   countriesContainer.style.opacity = 1;
@@ -32,6 +32,13 @@ const renderError = function (msg) {
   // countriesContainer.style.opacity = 1;
 };
 
+const getJSON = function (url, errorMsg = 'Something went wrong.') {
+  return fetch(url).then(response => {
+    if (!response.ok) throw new Error(`${errorMsg} (${response.status})`);
+
+    return response.json();
+  });
+};
 ///////////////////////////////////////
 
 // https://restcountries.com/v2/
@@ -157,14 +164,6 @@ setTimeout(() => {
 //     .then(data => renderCountry(data[0]));
 // };
 // getCountryData('portugal');
-
-const getJSON = function (url, errorMsg = 'Something went wrong.') {
-  return fetch(url).then(response => {
-    if (!response.ok) throw new Error(`${errorMsg} (${response.status})`);
-
-    return response.json();
-  });
-};
 
 // const getCountryData = function (country) {
 //   // Country 1
@@ -456,6 +455,7 @@ TEST DATA: Images in the img folder. Test the error handler by passing a wrong i
 GOOD LUCK 😀
 */
 
+/*
 const wait = function (seconds) {
   return new Promise(function (resolve) {
     setTimeout(resolve, seconds * 1000);
@@ -500,5 +500,50 @@ createImage('img/img-1.jpg')
   })
   .then(() => {
     currentImg.style.display = 'none';
+    return createImage('img/img-3.jpg');
+  })
+  .then(img => {
+    currentImg = img;
+    console.log('Image 3 loaded');
+    return wait(3);
+  })
+  .then(() => {
+    currentImg.style.display = 'none';
   })
   .catch(err => console.error(err));
+*/
+
+////////////////////////////
+/// Consuming Promises with Async/Await
+
+const getPosition = function () {
+  return new Promise(function (resolve, reject) {
+    navigator.geolocation.getCurrentPosition(resolve, reject);
+  });
+};
+// fetch(`https://restcountries.com/v3.1/name/${country}`).then(res =>
+//   console.log(res)
+// );
+
+const whereAmI = async function () {
+  // Geolocation
+  const pos = await getPosition();
+  const { latitude: lat, longitude: lng } = pos.coords;
+
+  // Reverse geocoding
+  const resGeo = await fetch(`https://geocode.xyz/${lat},${lng}?geoit=json`);
+  const dataGeo = await resGeo.json();
+  console.log(dataGeo);
+
+  // Country data
+  const res = await fetch(
+    `https://restcountries.com/v3.1/name/${dataGeo.country}`
+  );
+  // console.log(res);
+  const data = await res.json();
+  console.log(data);
+  renderCountry(data[0]);
+};
+
+whereAmI();
+console.log('FIRST');
