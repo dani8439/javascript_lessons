@@ -1,0 +1,3 @@
+- To get today's date, use the get Date method: https://www.w3schools.com/js/js_date_methods.asp
+- Use setAttribute to change the meter's value.
+- Use low, high, and optimum attributes to change colors.
