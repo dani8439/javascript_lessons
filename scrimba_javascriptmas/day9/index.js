@@ -11,6 +11,14 @@ function deckTheHalls() {
     house.textContent += "🎄☃️";
   }
 
+  // function deckTheHalls() {
+  //   if (decorator.checked) {
+  //     house.textContent = "🦌🎄🏡🎄☃️";
+  //   } else {
+  //     house.textContent = "🏡";
+  //   }
+  // }
+
   // Task:
   // Write a function to add decorations (e.g. ☃️, 🎄, etc) next to the house when the switch is toggled.
 }
