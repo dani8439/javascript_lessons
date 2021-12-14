@@ -47,7 +47,7 @@ console.log(lastPost2);
 
 ////
 // Module Pattern
-/*
+
 const ShoppingCart2 = (function () {
   const cart = [];
   const shippingCost = 10;
@@ -77,7 +77,6 @@ ShoppingCart2.addToCart('apple', 4);
 ShoppingCart2.addToCart('pizza', 2);
 console.log(ShoppingCart2);
 console.log(ShoppingCart2.shippingCost);
-*/
 
 ///////
 // Common JS Modules
@@ -93,6 +92,8 @@ console.log(ShoppingCart2.shippingCost);
 // Import
 // const { addToCart } = require('./shoppingCart.js');
 
+/////////////////////////////////
+// Introduction to NPM
 import cloneDeep from './node_modules/lodash-es/cloneDeep.js';
 
 const state = {
