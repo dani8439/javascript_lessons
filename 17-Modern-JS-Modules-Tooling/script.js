@@ -47,7 +47,7 @@ console.log(lastPost2);
 
 ////
 // Module Pattern
-
+/*
 const ShoppingCart2 = (function () {
   const cart = [];
   const shippingCost = 10;
@@ -135,3 +135,4 @@ Promise.resolve('TEST').then(x => console.log(x));
 
 // // Polyfilling async functions
 // import 'regenerator-runtime/runtime';
+*/
