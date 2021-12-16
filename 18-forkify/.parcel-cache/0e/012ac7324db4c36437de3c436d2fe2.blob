@@ -472,12 +472,10 @@ const renderSpinner = function (parentEl) {
 
 const showRecipe = async function () {
   try {
-    const id = window.location.hash.slice(1);
-    console.log(id);
-    if (!id) return; // 1. Loading recipe
-
+    // 1. Loading recipe
     renderSpinner(recipeContainer);
-    const res = await fetch(`https://forkify-api.herokuapp.com/api/v2/recipes/${id}`);
+    const res = await fetch( // `https://forkify-api.herokuapp.com/api/v2/recipes/5ed6604591c37cdc054bcc13`
+    `https://forkify-api.herokuapp.com/api/v2/recipes/5ed6604591c37cdc054bc886`);
     const data = await res.json();
     if (!res.ok) throw new Error(`${data.message} (${res.status})`);
     console.log(res, data);
@@ -587,8 +585,8 @@ const showRecipe = async function () {
   }
 };
 
-['hashchange', 'load'].forEach(ev => window.addEventListener(ev, showRecipe)); // window.addEventListener('hashchange', showRecipe);
-// window.addEventListener('load', showRecipe);
+showRecipe();
+window.addEventListener('hashchange', showRecipe);
 },{"url:../img/icons.svg":"3aca5c900387df6d82055bcbdb6cdc21","core-js/modules/web.immediate.js":"140df4f8e97a45c53c66fead1f5a9e92"}],"3aca5c900387df6d82055bcbdb6cdc21":[function(require,module,exports) {
 module.exports = require('./bundle-url').getBundleURL() + require('./relative-path')("3b84fe33276c7b29", "139ada5512e5e386");
 },{"./bundle-url":"2146da1905b95151ed14d455c784e7b7","./relative-path":"1b9943ef25c7bbdf0dd1b9fa91880a6c"}],"2146da1905b95151ed14d455c784e7b7":[function(require,module,exports) {
