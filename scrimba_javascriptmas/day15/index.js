@@ -22,6 +22,12 @@ const greetingsArr = [
 ];
 
 function translate() {
+  const selectedLanguage = languageSelector.value;
+  for (let i = 0; i < greetingsArr.length; i++) {
+    if (greetingsArr[i].language === selectedLanguage) {
+      greetingDisplay.textContent = greetingsArr[i].greeting;
+    }
+  }
   // Task:
   // - Write a function to display the correct greeting when a language is selected.
 }
