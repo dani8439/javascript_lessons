@@ -471,9 +471,7 @@ const controlRecipes = async function () {
   }
 };
 
-const init = function () {
-  _recipeView.default.addHandlerRender(controlRecipes);
-};
+const init = function () {};
 
 init();
 },{"core-js/modules/web.immediate.js":"140df4f8e97a45c53c66fead1f5a9e92","./model.js":"aabf248f40f7693ef84a0cb99f385d1f","./views/recipeView.js":"bcae1aced0301b01ccacb3e6f7dfede8"}],"140df4f8e97a45c53c66fead1f5a9e92":[function(require,module,exports) {
