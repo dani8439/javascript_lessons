@@ -39,6 +39,21 @@ btn.addEventListener("click", () => {
   }
 });
 
+// function select() {
+//   selectedAge = ageSelector.value;
+//   selectedGenre = genreSelector.value;
+//   for (let i = 0; i < moviesArr.length; i++) {
+//     if (
+//       moviesArr[i].age === selectedAge &&
+//       moviesArr[i].genre === selectedGenre
+//     ) {
+//       suggestedMovie.textContent = moviesArr[i].name;
+//     }
+//   }
+// }
+
+// select();
+
 // Task:
 // - Write a function to select a suitable movie based on the age group and genre provided.
 //  - Display it in the suggested-movie paragraph when the button is clicked.
