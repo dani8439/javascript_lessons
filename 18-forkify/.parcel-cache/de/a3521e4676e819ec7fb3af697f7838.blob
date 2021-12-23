@@ -545,7 +545,7 @@ const controlBookmarks = function () {
 };
 
 const controlAddRecipe = function (newRecipe) {
-  console.log(newRecipe); // Function to upload new recipe data.
+  console.log(newRecipe);
 };
 
 const init = function () {
@@ -3022,12 +3022,11 @@ class AddRecipeView extends _View.default {
     this._overlay.addEventListener('click', this.toggleWindow.bind(this));
   }
 
-  addHandlerUpload(handler) {
+  addHandlerUpload() {
     this._parentElement.addEventListener('submit', function (e) {
       e.preventDefault();
-      const dataArr = [...new FormData(this)];
-      const data = Object.fromEntries(dataArr);
-      handler(data);
+      const data = [...new FormData(this)];
+      console.log(data);
     });
   }
 
