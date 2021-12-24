@@ -37,3 +37,13 @@ Added to work around error in package.json:
     "maintained node versions"
   ],
 ```
+
+## Continuous Integration -
+
+Linking the github to the netlify, so that whenever there's a change, it changes online. Don't think I can do that as the repo is in a folder and not it's own repo.
+
+Can tell netlify to run the build command whenever there's a change in our repository, because we deployed the dist folder. Copy the build command from package.json, and put that on Netlify as build command, as we want master branch.
+
+Publish directory is the `dist` folder. Where the code will live after the build command is executed.
+
+Doesn't always run smoothly, but netlify builds all the assets, etc. And the build command is understood.
