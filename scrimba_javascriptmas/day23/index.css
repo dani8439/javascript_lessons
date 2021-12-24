@@ -1,0 +1,50 @@
+:root {
+  --wine-red: #c7375f;
+  --bright-red: #d42d2f;
+  --dark-green: #344d2f;
+  --light-green: #77a047;
+  --gold: #fac57d;
+  --snow: #f0f4f7;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--light-green);
+  height: 100vh;
+}
+
+.sign,
+.text-input {
+  color: var(--dark-green);
+  background-color: var(--snow);
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px,
+    rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+}
+
+.sign {
+  border: 5px solid var(--wine-red);
+  padding: 1em;
+  min-width: 450px;
+  font-size: 45px;
+}
+
+label {
+  font-size: 2rem;
+  color: var(--dark-green);
+}
+
+.text-input {
+  border: none;
+  padding: 0.5em 1em;
+  font-size: 1.5rem;
+}

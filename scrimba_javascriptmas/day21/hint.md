@@ -1,0 +1,2 @@
+- calculate speed with distance / time
+- either run the function on each keyUp or add a button
